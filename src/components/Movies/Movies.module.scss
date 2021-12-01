@@ -1,5 +1,9 @@
 .main-content {
   // hard-coded for now
   padding-top: 7rem;
-  background: blue;
+  background: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
