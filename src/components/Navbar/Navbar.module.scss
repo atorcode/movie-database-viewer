@@ -1,8 +1,13 @@
 .navigation-bar {
   width: 100%;
   position: fixed;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   background-color: green;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }

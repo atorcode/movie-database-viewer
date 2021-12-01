@@ -5,7 +5,11 @@ const SearchBar = () => {
   return (
     <div className={styles["search-bar-container"]}>
       <FiSearch />
-      <input type="search" placeholder="Search..." />
+      <input
+        type="search"
+        placeholder="Search..."
+        className={styles["search-bar"]}
+      />
     </div>
   );
 };

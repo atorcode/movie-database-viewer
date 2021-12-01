@@ -1,7 +1,7 @@
 import styles from "./Movies.module.scss";
 const Movies = () => {
   return (
-    <main className={styles.a}>
+    <main className={styles["main-content"]}>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse consectetur
       aliquam odio, eius quas tempora consequuntur soluta voluptatem enim,
       tempore nobis minus qui. Soluta illo rem deserunt ratione, nesciunt
