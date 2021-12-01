@@ -1,3 +1,8 @@
-.a {
-  background: green;
+.navigation-bar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: green;
 }
