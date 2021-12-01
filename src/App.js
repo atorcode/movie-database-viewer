@@ -1,8 +1,13 @@
+import Navbar from "./components/Navbar";
+import Movies from "./components/Movies";
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <>
-      <a href="#">test link</a>
-      <p>test paragraph</p>
+      <Navbar />
+      <Movies />
+      <Footer />
     </>
   );
 }
