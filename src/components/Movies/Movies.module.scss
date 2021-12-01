@@ -2,8 +2,19 @@
   // hard-coded for now
   padding-top: 7rem;
   background: aqua;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+  section h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+}
+
+.movies-container {
+  width: 90vw;
+  margin: 0 auto;
+  padding-bottom: 7.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   gap: 1rem;
 }

@@ -7,9 +7,14 @@ const Movies = () => {
   console.log(movies);
   return (
     <main className={styles["main-content"]}>
-      {movies.map((movie) => {
-        return <Movie key={movie.id} {...movie} />;
-      })}
+      <section>
+        <h2>Popular Movies</h2>
+        <div className={styles["movies-container"]}>
+          {movies.map((movie) => {
+            return <Movie key={movie.id} {...movie} />;
+          })}
+        </div>
+      </section>
     </main>
   );
 };
