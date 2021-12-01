@@ -8,7 +8,7 @@ const Movies = () => {
   return (
     <main className={styles["main-content"]}>
       <section>
-        <h2>Popular Movies</h2>
+        <h1>Popular Movies</h1>
         <div className={styles["movies-container"]}>
           {movies.map((movie) => {
             return <Movie key={movie.id} {...movie} />;

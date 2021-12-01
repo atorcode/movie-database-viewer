@@ -1,9 +1,17 @@
+@use "../../variables" as v;
+
 .footer {
-  margin: 1rem 0;
+  background-color: v.$primary-color;
+  filter: brightness(85%);
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  p {
+    color: #eeeeee;
+  }
 }
 
 .tmdb-shout-out {

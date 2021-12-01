@@ -3,7 +3,7 @@ import SearchBar from "../_basic/SearchBar";
 const Navbar = () => {
   return (
     <nav className={styles["navigation-bar"]}>
-      <h1 className={styles["site-name"]}>Movie Database Viewer</h1>
+      <h2 className={styles["site-name"]}>Movie Database Viewer</h2>
       <SearchBar />
     </nav>
   );

@@ -1,9 +1,13 @@
+@use "../../variables" as v;
+
 .main-content {
   // hard-coded for now
   padding-top: 7rem;
-  background: aqua;
+  background: v.$primary-color;
 
-  section h2 {
+  section h1 {
+    color: v.$secondary-color;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     margin-bottom: 3.5rem;

@@ -1,14 +1,18 @@
+@use "../../variables" as v;
+
 .navigation-bar {
   z-index: 9999;
   width: 100%;
+  padding: 0.25rem 0;
   position: fixed;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
-  background-color: green;
+  background-color: v.$primary-color;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .site-name {
-  font-size: 1.5rem;
+  color: v.$secondary-color;
   margin-left: 1rem;
 }
