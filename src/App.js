@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
 import useSWR from "swr";
+import fetcher from "./helpers/fetcher";
 
 function App() {
   const [displayedMovies, setDisplayedMovies] = useState([]);
@@ -10,19 +11,7 @@ function App() {
 
   const { data, error } = useSWR(
     `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`,
-    async (url) => {
-      try {
-        const response = await fetch(url);
-        if (response.ok) {
-          const jsonData = await response.json();
-          return jsonData;
-        } else {
-          throw new Error(response.status);
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    }
+    fetcher
   );
 
   useEffect(() => {
