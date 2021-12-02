@@ -1,9 +1,11 @@
 import styles from "./Movie.module.scss";
-import dummyMovie from "../../dummyMovie.png";
-const Movie = ({ title }) => {
+
+const Movie = (props) => {
+  const { title, poster_path: image } = props;
+  console.log(title, image);
   return (
     <article className={styles["movie-card"]}>
-      <img src={dummyMovie} alt="Movie" />
+      <img src={`https://image.tmdb.org/t/p/w500${image}`} alt="Movie" />
       <h4>{title}</h4>
     </article>
   );

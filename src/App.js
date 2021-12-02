@@ -1,14 +1,22 @@
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
 import useFetch from "./hooks/useFetch";
+
 function App() {
-  const data = useFetch("https://course-api.com/react-tours-project");
-  console.log(data);
+  const [displayedMovies, setDisplayedMovies] = useState([]);
+  const popularMovies = useFetch(
+    `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`
+  ).results;
+  useEffect(() => {
+    setDisplayedMovies(popularMovies);
+  }, [popularMovies]);
+
   return (
     <>
       <Navbar />
-      <Movies />
+      <Movies displayedMovies={displayedMovies} />
       <Footer />
     </>
   );
