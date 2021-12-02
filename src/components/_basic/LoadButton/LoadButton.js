@@ -1,5 +1,5 @@
 import styles from "./LoadButton.module.scss";
-import useFetch from "../../../hooks/useFetch";
+
 const LoadButton = ({ displayedMovies, setDisplayedMovies }) => {
   return (
     <>

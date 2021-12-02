@@ -4,7 +4,6 @@ import Movie from "../Movie";
 import LoadButton from "../_basic/LoadButton";
 
 const Movies = (props) => {
-  console.log(props);
   const { displayedMovies } = props;
   return (
     <main className={styles["main-content"]}>
