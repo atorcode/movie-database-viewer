@@ -1,14 +1,19 @@
-.movie-card {
-  background-color: #dddddd;
-  width: 100%;
+@use "../../variables" as v;
 
+.movie-card {
+  background-color: v.$primary-color;
+  color: v.$secondary-color;
+  filter: brightness(150%);
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
   img {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     width: 100%;
   }
-}
 
-// @media (max-width: 1500px) {
-//   .movie-card {
-//     width: 275px;
-//   }
-// }
+  h4 {
+    padding: 0.75rem 0.5rem;
+  }
+}
