@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./LoadButton.module.scss";
 import useSWR from "swr";
 import fetcher from "../../../helpers/fetcher";
+import PropTypes from "prop-types";
 const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
   const [startFetch, setStartFetch] = useState(false);
   const { data, error } = useSWR(() => {
@@ -31,6 +32,13 @@ const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
       </button>
     </>
   );
+};
+
+LoadButton.propTypes = {
+  displayedMovies: PropTypes.array.isRequired,
+  setDisplayedMovies: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
 };
 
 export default LoadButton;

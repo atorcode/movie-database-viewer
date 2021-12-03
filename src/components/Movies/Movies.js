@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Movies.module.scss";
 import Movie from "../Movie";
 import LoadButton from "../_basic/LoadButton";
-
+import PropTypes from "prop-types";
 const Movies = (props) => {
   const { displayedMovies } = props;
   return (
@@ -19,6 +19,10 @@ const Movies = (props) => {
       </section>
     </main>
   );
+};
+
+Movies.propTypes = {
+  displayedMovies: PropTypes.array.isRequired,
 };
 
 export default Movies;
