@@ -23,6 +23,8 @@ function App() {
   const propsToPass = {
     displayedMovies,
     setDisplayedMovies,
+    page,
+    setPage,
   };
 
   return (
