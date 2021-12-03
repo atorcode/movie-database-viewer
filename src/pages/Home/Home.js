@@ -1,5 +1,5 @@
 import styles from "./Home.module.scss";
-import Movie from "../../components/Movie";
+import MovieCard from "../../components/MovieCard";
 import LoadButton from "../../components/_basic/LoadButton";
 import PropTypes from "prop-types";
 const Home = (props) => {
@@ -7,11 +7,11 @@ const Home = (props) => {
   return (
     <main className={styles["main-content"]}>
       <section>
-        <h1>Popular Movies</h1>
+        <h1>Trending Movies</h1>
         <div className={styles["movies-container"]}>
           {displayedMovies &&
             displayedMovies.map((movie) => {
-              return <Movie key={movie.id} {...movie} />;
+              return <MovieCard key={movie.id} {...movie} />;
             })}
         </div>
         <LoadButton {...props} />

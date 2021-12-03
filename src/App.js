@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import EmptySpace from "./components/_basic/EmptySpace";
 import fetcher from "./helpers/fetcher";
 import Home from "./pages/Home/";
+import SelectedMovie from "./pages/SelectedMovie";
 import Error from "./pages/Error";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home {...propsToPass} />} />
+          <Route path="/movie/:movieId" element={<SelectedMovie />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </Router>
