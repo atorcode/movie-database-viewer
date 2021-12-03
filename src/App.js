@@ -9,7 +9,7 @@ function App() {
   const [displayedMovies, setDisplayedMovies] = useState([]);
   const [page, setPage] = useState(1);
 
-  const { data, error } = useSWR(
+  const { data } = useSWR(
     `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`,
     fetcher
   );

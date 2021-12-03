@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Movies.module.scss";
 import Movie from "../Movie";
 import LoadButton from "../_basic/LoadButton";

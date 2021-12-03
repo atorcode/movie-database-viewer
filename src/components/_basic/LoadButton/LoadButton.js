@@ -5,7 +5,7 @@ import fetcher from "../../../helpers/fetcher";
 import PropTypes from "prop-types";
 const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
   const [startFetch, setStartFetch] = useState(false);
-  const { data, error } = useSWR(() => {
+  const { data } = useSWR(() => {
     return startFetch
       ? `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
       : null;
@@ -26,6 +26,7 @@ const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
         onClick={() => {
           setPage(page + 1);
           setStartFetch(true);
+          document.activeElement.blur();
         }}
       >
         Load more
