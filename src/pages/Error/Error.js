@@ -2,7 +2,7 @@ import styles from "./Error.module.scss";
 // import { Link } from "react-router-dom";
 const Error = () => {
   return (
-    <div>
+    <main className={styles["error"]}>
       <h1>ERROR</h1>
       <p>
         ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
@@ -40,7 +40,7 @@ const Error = () => {
         ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
         ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
       </p>
-    </div>
+    </main>
   );
 };
 

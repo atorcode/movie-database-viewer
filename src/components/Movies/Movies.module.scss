@@ -1,8 +1,6 @@
 @use "../../variables" as v;
 
 .main-content {
-  // hard-coded for now
-  padding-top: 6rem;
   background: v.$primary-color;
 
   section {
