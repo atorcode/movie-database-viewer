@@ -1,8 +1,8 @@
-import styles from "./Movies.module.scss";
-import Movie from "../Movie";
-import LoadButton from "../_basic/LoadButton";
+import styles from "./Home.module.scss";
+import Movie from "../../components/Movie";
+import LoadButton from "../../components/_basic/LoadButton";
 import PropTypes from "prop-types";
-const Movies = (props) => {
+const Home = (props) => {
   const { displayedMovies } = props;
   return (
     <main className={styles["main-content"]}>
@@ -20,8 +20,8 @@ const Movies = (props) => {
   );
 };
 
-Movies.propTypes = {
+Home.propTypes = {
   displayedMovies: PropTypes.array.isRequired,
 };
 
-export default Movies;
+export default Home;

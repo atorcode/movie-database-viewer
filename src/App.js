@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useSWR from "swr";
 import Navbar from "./components/Navbar";
-import Movies from "./components/Movies";
 import Footer from "./components/Footer";
 import EmptySpace from "./components/_basic/EmptySpace";
 import fetcher from "./helpers/fetcher";
+import Home from "./pages/Home/";
 import Error from "./pages/Error";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
       <EmptySpace />
       <Router>
         <Routes>
-          <Route path="/" element={<Movies {...propsToPass} />} />
+          <Route path="/" element={<Home {...propsToPass} />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </Router>
