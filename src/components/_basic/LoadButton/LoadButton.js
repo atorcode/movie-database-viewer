@@ -12,7 +12,8 @@ const LoadButton = ({ displayedMovies, setDisplayedMovies }) => {
 
   useEffect(() => {
     if (data) {
-      setDisplayedMovies(data.results);
+      console.log([...displayedMovies, ...data.results]);
+      setDisplayedMovies([...displayedMovies, ...data.results]);
     }
   }, [data]);
 
