@@ -23,7 +23,7 @@
 
   &:hover,
   &:focus {
-    border: 2px solid yellow;
+    border: 2px solid v.$tertiary-color;
     outline: none;
   }
 
@@ -33,23 +33,23 @@
   }
 }
 
-.title-and-score {
-  display: flex;
-  justify-content: space-between;
+.title {
   padding: 0.25rem 0.5rem 0 0.5rem;
-
-  h4 {
-    font-size: 1.1rem;
-  }
-  p {
-    color: v.$tertiary-color;
-    font-size: 0.9rem;
-  }
+  font-size: 1.1rem;
 }
 
+.release-year-and-score {
+  display: flex;
+  justify-content: space-between;
+}
 .release-year {
-  justify-content: flex-end;
   color: #ffffff;
   padding: 0 0.5rem 0.5rem 0.5rem;
   font-size: 0.8rem;
+}
+
+.score {
+  color: v.$tertiary-color;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  font-size: 0.9rem;
 }

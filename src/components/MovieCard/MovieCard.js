@@ -15,11 +15,11 @@ const MovieCard = (props) => {
       <article>
         <img src={`https://image.tmdb.org/t/p/w500${image}`} alt="Movie" />
         <header>
-          <div className={styles["title-and-score"]}>
-            <h4>{title}</h4>
-            <p>{score}</p>
+          <h4 className={styles["title"]}>{title}</h4>
+          <div className={styles["release-year-and-score"]}>
+            <p className={styles["release-year"]}>{release.substring(0, 4)}</p>
+            <p className={styles["score"]}>{score}</p>
           </div>
-          <p className={styles["release-year"]}>{release.substring(0, 4)}</p>
         </header>
       </article>
     </Link>
