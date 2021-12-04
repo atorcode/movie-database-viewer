@@ -2,13 +2,34 @@
 .main {
   background-color: v.$primary-color;
   color: #eeeeee;
+  margin-top: -2rem;
+}
+
+.movie-hero {
+  height: 100vh;
+  position: relative;
+  background-color: #000000;
+
+  img {
+    width: 70%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 .movie-info {
-  top: 0;
+  background-color: transparent;
   z-index: 10;
   position: absolute;
-  img {
-    width: 100%;
+  top: 10rem;
+  width: 60%;
+  h1 {
+    color: v.$secondary-color;
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+    color: #ffffff;
   }
 }

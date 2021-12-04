@@ -10,7 +10,7 @@ const SelectedMovie = () => {
     fetcher
   );
 
-  let title, release, image, score, tagline, overview;
+  let title, release, image, score, tagline, overview, runtime;
   if (data) {
     ({
       title,
@@ -19,6 +19,7 @@ const SelectedMovie = () => {
       vote_average: score,
       tagline,
       overview,
+      runtime,
     } = data);
   }
 
@@ -26,8 +27,14 @@ const SelectedMovie = () => {
 
   return (
     <main className={styles["main"]}>
-      <section className={styles["movie-info"]}>
-        <h1>{title}</h1>
+      <section className={styles["movie-hero"]}>
+        <div className={styles["movie-info"]}>
+          <h1>{title}</h1>
+          <h2>{tagline}</h2>
+          {/* fix formatting of runtime */}
+          <p>{runtime}</p>
+          <p>{overview}</p>
+        </div>
         <img src={`https://image.tmdb.org/t/p/original${image}`} alt={title} />
       </section>
     </main>
