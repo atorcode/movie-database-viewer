@@ -18,6 +18,18 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     width: 100%;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid yellow;
+    outline: none;
+  }
+
+  &:hover img,
+  &:focus img {
+    filter: saturate(175%) contrast(115%);
   }
 }
 
@@ -31,6 +43,7 @@
   }
   p {
     color: v.$tertiary-color;
+    font-size: 0.9rem;
   }
 }
 

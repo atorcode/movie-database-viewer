@@ -21,3 +21,8 @@ ul {
 body {
   font-family: v.$font-stack;
 }
+
+::selection {
+  background-color: v.$tertiary-color;
+  color: v.$primary-color;
+}

@@ -7,11 +7,9 @@ const MovieCard = (props) => {
     title,
     release_date: release,
     poster_path: image,
-    overview,
     vote_average: score,
   } = props;
 
-  console.log(props);
   return (
     <Link to={`/movie/${id}`} className={styles["movie-card"]}>
       <article>
@@ -33,7 +31,6 @@ MovieCard.propTypes = {
   release_date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   poster_path: PropTypes.string.isRequired,
-  overview: PropTypes.string.isRequired,
   vote_average: PropTypes.number.isRequired,
 };
 
