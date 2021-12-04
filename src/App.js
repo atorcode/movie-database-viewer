@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useSWR from "swr";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import EmptySpace from "./components/_basic/EmptySpace";
 import fetcher from "./helpers/fetcher";
 import Home from "./pages/Home/";
 import SelectedMovie from "./pages/SelectedMovie";
@@ -34,7 +33,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <EmptySpace />
       <Router>
         <Routes>
           <Route path="/" element={<Home {...propsToPass} />} />

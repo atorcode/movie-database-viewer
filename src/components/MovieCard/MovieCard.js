@@ -13,7 +13,7 @@ const MovieCard = (props) => {
   return (
     <Link to={`/movie/${id}`} className={styles["movie-card"]}>
       <article>
-        <img src={`https://image.tmdb.org/t/p/w500${image}`} alt="Movie" />
+        <img src={`https://image.tmdb.org/t/p/w500${image}`} alt={title} />
         <header>
           <h4 className={styles["title"]}>{title}</h4>
           <div className={styles["release-year-and-score"]}>

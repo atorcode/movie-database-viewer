@@ -3,3 +3,12 @@
   background-color: v.$primary-color;
   color: #eeeeee;
 }
+
+.movie-info {
+  top: 0;
+  z-index: 10;
+  position: absolute;
+  img {
+    width: 100%;
+  }
+}

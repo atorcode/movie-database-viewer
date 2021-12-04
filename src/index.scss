@@ -19,6 +19,9 @@ ul {
 }
 
 body {
+  background-color: v.$primary-color;
+  // hard-coded for now
+  padding-top: 6rem;
   font-family: v.$font-stack;
 }
 
