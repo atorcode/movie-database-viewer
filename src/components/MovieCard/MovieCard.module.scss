@@ -1,19 +1,34 @@
 @use "../../variables" as v;
 
 .movie-card {
-  background-color: v.$primary-color;
+  background-color: v.$primary-color-light;
   color: v.$secondary-color;
-  filter: brightness(150%);
   width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
+
   img {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     width: 100%;
   }
+}
+
+.title-and-score {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem 0 0.5rem;
 
   h4 {
-    padding: 0.75rem 0.5rem;
+    font-size: 1.1rem;
   }
+  p {
+    color: v.$tertiary-color;
+  }
+}
+
+.release-year {
+  color: #ffffff;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  font-size: 0.8rem;
 }
