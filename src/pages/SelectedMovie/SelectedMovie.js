@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from "./SelectedMovie.module.scss";
 import useSWR from "swr";
 import fetcher from "../../helpers/fetcher";
+import { formatMinutes } from "../../helpers/helpers";
 const SelectedMovie = () => {
   const { movieId } = useParams();
   const { data } = useSWR(
@@ -23,7 +24,8 @@ const SelectedMovie = () => {
     } = data);
   }
 
-  console.log(data);
+  const formattedRuntime = formatMinutes(runtime);
+  console.log(formattedRuntime);
 
   return (
     <main className={styles["main"]}>
@@ -31,8 +33,7 @@ const SelectedMovie = () => {
         <div className={styles["movie-info"]}>
           <h1>{title}</h1>
           <h2>{tagline}</h2>
-          {/* fix formatting of runtime */}
-          <p>{runtime}</p>
+          <p>{formattedRuntime}</p>
           <p>{overview}</p>
         </div>
         <div className={styles["image-container"]}>
