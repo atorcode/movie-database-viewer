@@ -1,4 +1,4 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./SelectedMovie.module.scss";
 import useSWR from "swr";
@@ -27,6 +27,11 @@ const SelectedMovie = () => {
 
   const formattedRuntime = formatMinutes(runtime);
   console.log(formattedRuntime);
+
+  useEffect(() => {
+    // strange outlining happening sometimes
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className={styles["main"]}>
