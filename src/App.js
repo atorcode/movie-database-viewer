@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useSWR from "swr";
+import { SelectedMovieProvider } from "./contexts/SelectedMovieContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import fetcher from "./helpers/fetcher";
@@ -36,7 +37,14 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home {...propsToPass} />} />
-          <Route path="/movie/:movieId" element={<SelectedMovie />} />
+          <Route
+            path="/movie/:movieId"
+            element={
+              <SelectedMovieProvider>
+                <SelectedMovie />
+              </SelectedMovieProvider>
+            }
+          />
           <Route path="/*" element={<Error />} />
         </Routes>
         <Footer />

@@ -1,13 +1,11 @@
 import styles from "./MovieInfo.module.scss";
 import { FaStar } from "react-icons/fa";
-const MovieInfo = ({
-  title,
-  release,
-  score,
-  tagline,
-  overview,
-  formattedRuntime,
-}) => {
+import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
+
+const MovieInfo = () => {
+  const { title, release, score, tagline, overview, formattedRuntime } =
+    useSelectedMovieContext();
+
   return (
     <div className={styles["movie-info"]}>
       <h1>{title}</h1>

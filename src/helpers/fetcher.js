@@ -1,5 +1,6 @@
 const fetcher = async (url) => {
   try {
+    console.log(url);
     const response = await fetch(url);
     if (response.ok) {
       const jsonData = await response.json();
