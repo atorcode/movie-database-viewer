@@ -4,6 +4,7 @@ import styles from "./SelectedMovie.module.scss";
 import useSWR from "swr";
 import fetcher from "../../helpers/fetcher";
 import { formatMinutes } from "../../helpers/helpers";
+import { FaStar } from "react-icons/fa";
 const SelectedMovie = () => {
   const { movieId } = useParams();
   const { data } = useSWR(
@@ -33,7 +34,12 @@ const SelectedMovie = () => {
         <div className={styles["movie-info"]}>
           <h1>{title}</h1>
           <h2>{tagline}</h2>
-          <p>{formattedRuntime}</p>
+          <p>{release && release.substring(0, 4)}</p>
+          <p>
+            {formattedRuntime} <FaStar className={styles["star-icon"]} />
+            {score}
+          </p>
+          <h3>Overview</h3>
           <p>{overview}</p>
         </div>
         <div className={styles["image-container"]}>

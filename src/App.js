@@ -32,15 +32,15 @@ function App() {
 
   return (
     <>
-      <Navbar />
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home {...propsToPass} />} />
           <Route path="/movie/:movieId" element={<SelectedMovie />} />
           <Route path="/*" element={<Error />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 }
