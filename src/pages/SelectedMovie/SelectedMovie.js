@@ -29,7 +29,6 @@ const SelectedMovie = () => {
   console.log(formattedRuntime);
 
   useEffect(() => {
-    // strange outlining happening sometimes
     window.scrollTo(0, 0);
   }, []);
 
@@ -49,10 +48,12 @@ const SelectedMovie = () => {
         </div>
         <div className={styles["image-container"]}>
           <div className={styles["gradient-background"]}></div>
-          <img
-            src={`https://image.tmdb.org/t/p/original${image}`}
-            alt={title}
-          />
+          {image && (
+            <img
+              src={`https://image.tmdb.org/t/p/original${image}`}
+              alt={title}
+            />
+          )}
         </div>
       </section>
     </main>
