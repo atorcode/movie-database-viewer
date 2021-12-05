@@ -1,0 +1,9 @@
+@use "../../variables" as v;
+
+.movie-hero {
+  // height and image's width are hard-coded for now.
+  // improve responsiveness later
+  height: 584px;
+  position: relative;
+  background-color: #000000;
+}

@@ -4,7 +4,7 @@ import styles from "./SelectedMovie.module.scss";
 import useSWR from "swr";
 import fetcher from "../../helpers/fetcher";
 import { formatMinutes } from "../../helpers/helpers";
-import { FaStar } from "react-icons/fa";
+import MovieHero from "../../components/MovieHero";
 const SelectedMovie = () => {
   const { movieId } = useParams();
   const { data } = useSWR(
@@ -26,36 +26,24 @@ const SelectedMovie = () => {
   }
 
   const formattedRuntime = formatMinutes(runtime);
-  console.log(formattedRuntime);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const propsToPass = {
+    title,
+    release,
+    image,
+    score,
+    tagline,
+    overview,
+    formattedRuntime,
+  };
+
   return (
     <main className={styles["main"]}>
-      <section className={styles["movie-hero"]}>
-        <div className={styles["movie-info"]}>
-          <h1>{title}</h1>
-          <h2>{tagline}</h2>
-          <p>{release && release.substring(0, 4)}</p>
-          <p>
-            {formattedRuntime} <FaStar className={styles["star-icon"]} />
-            {score}
-          </p>
-          <h3>Overview</h3>
-          <p>{overview}</p>
-        </div>
-        <div className={styles["image-container"]}>
-          <div className={styles["gradient-background"]}></div>
-          {image && (
-            <img
-              src={`https://image.tmdb.org/t/p/original${image}`}
-              alt={title}
-            />
-          )}
-        </div>
-      </section>
+      <MovieHero {...propsToPass} />
     </main>
   );
 };

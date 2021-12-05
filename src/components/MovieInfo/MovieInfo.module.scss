@@ -1,0 +1,26 @@
+@use "../../variables" as v;
+
+.movie-info {
+  background-color: transparent;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 40%;
+  padding-left: 3rem;
+  font-weight: 500;
+  h1 {
+    color: v.$secondary-color;
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.125rem;
+    color: #ffffff;
+  }
+  h3 {
+    padding-top: 1rem;
+  }
+  .star-icon {
+    color: v.$tertiary-color;
+  }
+}
