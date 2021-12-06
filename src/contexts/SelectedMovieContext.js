@@ -10,11 +10,11 @@ const SelectedMovieProvider = ({ children }) => {
   const { movieId } = useParams();
 
   const { data } = useSWR(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits`,
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits,release_dates`,
     fetcher
   );
 
-  let title, release, image, score, tagline, overview, runtime, cast;
+  let title, release, image, score, tagline, overview, runtime, cast, rating;
   if (data) {
     ({
       title,
@@ -30,6 +30,14 @@ const SelectedMovieProvider = ({ children }) => {
   const formattedRuntime = formatMinutes(runtime);
   if (data) {
     ({ cast } = data.credits);
+    // Find the first release date that has a certified rating
+    rating = data.release_dates.results
+      .find((result) => {
+        return result.iso_3166_1 === "US";
+      })
+      .release_dates.find((date) => {
+        return date.certification !== "";
+      }).certification;
   }
 
   return (
@@ -43,6 +51,7 @@ const SelectedMovieProvider = ({ children }) => {
         overview,
         formattedRuntime,
         cast,
+        rating,
       }}
     >
       {children}

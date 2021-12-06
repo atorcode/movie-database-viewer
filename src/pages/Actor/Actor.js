@@ -33,7 +33,6 @@ const Actor = () => {
     moviesActedIn = movie_credits.cast;
   }
 
-  console.log(moviesActedIn);
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
@@ -53,7 +52,6 @@ const Actor = () => {
       <section>
         {moviesActedIn &&
           moviesActedIn.map((movie) => {
-            console.log(movie.name);
             return <li key={movie.id}>{movie.title}</li>;
           })}
       </section>
