@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import styles from "./SelectedMovie.module.scss";
 import MovieHero from "../../components/MovieHero";
+import MovieDetails from "../../components/MovieDetails";
 
 const SelectedMovie = () => {
   useEffect(() => {
@@ -10,6 +11,7 @@ const SelectedMovie = () => {
   return (
     <main className={styles["main"]}>
       <MovieHero />
+      <MovieDetails />
     </main>
   );
 };

@@ -14,7 +14,12 @@ const SelectedMovieProvider = ({ children }) => {
     fetcher
   );
 
-  let title, release, image, score, tagline, overview, runtime;
+  const { data: creditsData } = useSWR(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`,
+    fetcher
+  );
+
+  let title, release, image, score, tagline, overview, runtime, cast;
   if (data) {
     ({
       title,
@@ -27,6 +32,11 @@ const SelectedMovieProvider = ({ children }) => {
     } = data);
   }
   const formattedRuntime = formatMinutes(runtime);
+
+  if (creditsData) {
+    ({ cast } = creditsData);
+  }
+
   return (
     <SelectedMovieContext.Provider
       value={{
@@ -37,6 +47,7 @@ const SelectedMovieProvider = ({ children }) => {
         tagline,
         overview,
         formattedRuntime,
+        cast,
       }}
     >
       {children}
