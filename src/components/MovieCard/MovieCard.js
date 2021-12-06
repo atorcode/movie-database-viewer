@@ -1,4 +1,5 @@
 import styles from "./MovieCard.module.scss";
+import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const MovieCard = (props) => {
@@ -18,7 +19,10 @@ const MovieCard = (props) => {
           <h4 className={styles["title"]}>{title}</h4>
           <div className={styles["release-year-and-score"]}>
             <p className={styles["release-year"]}>{release.substring(0, 4)}</p>
-            <p className={styles["score"]}>{score}</p>
+            <p className={styles["score"]}>
+              <FaStar />
+              <span>{score}</span>
+            </p>
           </div>
         </header>
       </article>

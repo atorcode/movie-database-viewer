@@ -49,7 +49,15 @@
 }
 
 .score {
+  display: flex;
+  align-items: center;
   color: v.$tertiary-color;
   padding: 0 0.5rem 0.5rem 0.5rem;
   font-size: 0.9rem;
+  margin-left: 4px;
+
+  span {
+    color: #eeeeee;
+    margin-left: 2px;
+  }
 }
