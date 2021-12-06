@@ -13,7 +13,9 @@ const CastMember = ({ name, character, profile_path }) => {
         alt={name}
       />
       <p>{name}</p>
-      <p>{character}</p>
+      <p>
+        <span>as</span> {character}
+      </p>
     </article>
   );
 };

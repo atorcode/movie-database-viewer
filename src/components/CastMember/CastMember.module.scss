@@ -1,9 +1,16 @@
+@use "../../variables" as v;
+
 .cast-member {
-  display: flex;
-  background-color: green;
+  padding: 1rem;
   width: 15rem;
 
   img {
+    background-color: v.$primary-color-light;
     width: 100%;
+    height: auto;
+  }
+
+  span {
+    color: v.$secondary-color;
   }
 }
