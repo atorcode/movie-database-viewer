@@ -1,5 +1,21 @@
 .cast-section {
   padding: 2rem 0;
-  display: flex;
-  flex-wrap: wrap;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  div {
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.5rem;
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 1rem;
+    // justify-content: center;
+  }
 }

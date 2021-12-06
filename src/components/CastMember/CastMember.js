@@ -1,6 +1,7 @@
 import styles from "./CastMember.module.scss";
 import defaultProfilePicture from "../../images/default-profile-picture.png";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 const CastMember = ({ name, character, profile_path }) => {
   return (
     <article className={styles["cast-member"]}>

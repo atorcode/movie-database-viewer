@@ -1,8 +1,9 @@
 @use "../../variables" as v;
 
 .cast-member {
-  padding: 1rem;
-  width: 15rem;
+  justify-self: center;
+  // width: 15rem;
+  width: 100%;
 
   img {
     background-color: v.$primary-color-light;
