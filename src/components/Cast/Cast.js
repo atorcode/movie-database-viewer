@@ -13,6 +13,7 @@ const Cast = () => {
             return (
               <CastMember
                 key={id}
+                id={id}
                 name={name}
                 character={character}
                 profile_path={profile_path}

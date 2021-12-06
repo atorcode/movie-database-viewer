@@ -10,12 +10,7 @@ const SelectedMovieProvider = ({ children }) => {
   const { movieId } = useParams();
 
   const { data } = useSWR(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`,
-    fetcher
-  );
-
-  const { data: creditsData } = useSWR(
-    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`,
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits`,
     fetcher
   );
 
@@ -29,12 +24,12 @@ const SelectedMovieProvider = ({ children }) => {
       tagline,
       overview,
       runtime,
+      cast,
     } = data);
   }
   const formattedRuntime = formatMinutes(runtime);
-
-  if (creditsData) {
-    ({ cast } = creditsData);
+  if (data) {
+    ({ cast } = data.credits);
   }
 
   return (

@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import fetcher from "./helpers/fetcher";
 import Home from "./pages/Home/";
 import SelectedMovie from "./pages/SelectedMovie";
+import Actor from "./pages/Actor";
 import Error from "./pages/Error";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
               </SelectedMovieProvider>
             }
           />
+          <Route path="/actor/:actorId" element={<Actor />} />
           <Route path="/*" element={<Error />} />
         </Routes>
         <Footer />

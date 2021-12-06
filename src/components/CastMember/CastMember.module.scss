@@ -3,7 +3,7 @@
 .cast-member {
   justify-self: center;
   width: 100%;
-  // overflow: hidden;
+  color: #eeeeee;
 
   &:hover img,
   &:focus img {
@@ -25,5 +25,9 @@
 
   span {
     color: v.$secondary-color;
+  }
+
+  .character {
+    color: #cccccc;
   }
 }
