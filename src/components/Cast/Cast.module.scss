@@ -12,10 +12,6 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 0.5rem;
-    // display: flex;
-    // flex-wrap: wrap;
-    // gap: 1rem;
-    // justify-content: center;
+    gap: 1rem;
   }
 }

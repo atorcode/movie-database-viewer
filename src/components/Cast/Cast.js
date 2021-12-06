@@ -1,7 +1,7 @@
-import styles from "./MovieDetails.module.scss";
+import styles from "./Cast.module.scss";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
 import CastMember from "../CastMember";
-const MovieDetails = () => {
+const Cast = () => {
   const { cast } = useSelectedMovieContext();
   return (
     <section className={styles["cast-section"]}>
@@ -24,4 +24,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default Cast;

@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 const CastMember = ({ name, character, profile_path }) => {
   return (
     <article className={styles["cast-member"]}>
-      <img
-        src={
-          profile_path
-            ? `https://image.tmdb.org/t/p/w200${profile_path}`
-            : defaultProfilePicture
-        }
-        alt={name}
-      />
+      <div className={styles["image-container"]}>
+        <img
+          src={
+            profile_path
+              ? `https://image.tmdb.org/t/p/w200${profile_path}`
+              : defaultProfilePicture
+          }
+          alt={name}
+        />
+      </div>
       <p>{name}</p>
       <p>
         <span>as</span> {character}
