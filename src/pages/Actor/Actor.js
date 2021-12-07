@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import styles from "./Actor.module.scss";
 import fetcher from "../../helpers/fetcher";
+import { formatDate } from "../../helpers/helpers";
 import useSWR from "swr";
 const Actor = () => {
   const { actorId } = useParams();
@@ -11,7 +12,9 @@ const Actor = () => {
 
   let name,
     birthday,
+    formattedBirthday,
     deathday,
+    formattedDeathday,
     biography,
     birthPlace,
     image,
@@ -28,9 +31,10 @@ const Actor = () => {
       profile_path: image,
       movie_credits: movieCredits,
     } = data);
-  }
-  if (movieCredits) {
     moviesActedIn = movieCredits.cast;
+
+    formattedBirthday = formatDate(birthday);
+    formattedDeathday = formatDate(deathday);
   }
 
   return (
@@ -43,7 +47,7 @@ const Actor = () => {
         <div className={styles["actor-info"]}>
           <h1>{name}</h1>
           <p>
-            {birthday} - {deathday}
+            {formattedBirthday} - {formattedDeathday}
           </p>
           <p>{birthPlace}</p>
           <p>{biography}</p>
