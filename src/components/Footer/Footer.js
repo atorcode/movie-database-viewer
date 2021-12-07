@@ -1,3 +1,4 @@
+import { FaGithub } from "react-icons/fa";
 import styles from "./Footer.module.scss";
 import TMDBShoutOut from "../../images/PoweredByTMDB.svg";
 
@@ -14,6 +15,10 @@ const Footer = () => {
       <p>
         This application consumes the TMDB API but is not affiliated with TMDB
       </p>
+      <p className={styles["copyright"]}>&copy; 2021 Alberto Torrigiotti</p>
+      <a href="https://github.com/atorcode/movie-database-viewer">
+        <FaGithub className={styles["github-icon"]} />
+      </a>
     </footer>
   );
 };

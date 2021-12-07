@@ -12,8 +12,20 @@
   p {
     color: #eeeeee;
   }
-}
 
-.tmdb-shout-out {
-  width: 200px;
+  .tmdb-shout-out {
+    width: 200px;
+    margin-bottom: 0.25rem;
+  }
+
+  .copyright {
+    margin: 0.5rem 0;
+  }
+
+  .github-icon {
+    margin-top: 1.25rem;
+    color: v.$secondary-color;
+    width: 2rem;
+    height: auto;
+  }
 }
