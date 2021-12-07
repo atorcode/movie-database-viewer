@@ -29,8 +29,8 @@ const SelectedMovieProvider = ({ children }) => {
     spokenLanguages,
     production,
     directedBy,
-    genreInfo,
-    writtenBy;
+    writtenBy,
+    genreInfo;
   if (data) {
     ({
       title,
@@ -52,8 +52,10 @@ const SelectedMovieProvider = ({ children }) => {
       return crewMember.job.toLowerCase() === "director";
     });
     writtenBy = data.credits.crew.filter((crewMember) => {
-      return crewMember.job.toLowerCase() === "writer";
+      return crewMember.job.toLowerCase() === "screenplay";
     });
+    console.log(data);
+    console.log(writtenBy);
 
     // Find the first release date that has a certified rating
     rating = data.release_dates.results
@@ -65,7 +67,6 @@ const SelectedMovieProvider = ({ children }) => {
       }).certification;
     formattedRuntime = formatMinutes(runtime);
   }
-  console.log(genreInfo);
 
   return (
     <SelectedMovieContext.Provider

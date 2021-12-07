@@ -20,7 +20,6 @@ ul {
 
 body {
   background-color: v.$primary-color;
-  // hard-coded for now
   padding-top: 6rem;
   font-family: v.$font-stack;
 }
@@ -28,4 +27,30 @@ body {
 ::selection {
   background-color: v.$tertiary-color;
   color: v.$primary-color;
+}
+
+// scrollbar
+::-webkit-scrollbar {
+  width: 1.375rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #111111;
+  // border-radius: 10px;
+  // margin: 4.5rem 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: v.$secondary-color;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.375),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.5);
+}
+
+// Firefox
+@supports (scrollbar-width: auto) {
+  :root {
+    scrollbar-width: auto;
+    scrollbar-color: v.$secondary-color #111111;
+  }
 }
