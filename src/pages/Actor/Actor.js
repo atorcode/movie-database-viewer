@@ -13,9 +13,9 @@ const Actor = () => {
     birthday,
     deathday,
     biography,
-    place_of_birth,
-    profile_path,
-    movie_credits,
+    birthPlace,
+    image,
+    movieCredits,
     moviesActedIn;
 
   if (data) {
@@ -24,20 +24,20 @@ const Actor = () => {
       birthday,
       deathday,
       biography,
-      place_of_birth,
-      profile_path,
-      movie_credits,
+      place_of_birth: birthPlace,
+      profile_path: image,
+      movie_credits: movieCredits,
     } = data);
   }
-  if (movie_credits) {
-    moviesActedIn = movie_credits.cast;
+  if (movieCredits) {
+    moviesActedIn = movieCredits.cast;
   }
 
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
         <img
-          src={profile_path && `https://image.tmdb.org/t/p/w400${profile_path}`}
+          src={image && `https://image.tmdb.org/t/p/w400${image}`}
           alt={name}
         />
         <div className={styles["actor-info"]}>
@@ -45,7 +45,7 @@ const Actor = () => {
           <p>
             {birthday} - {deathday}
           </p>
-          <p>{place_of_birth}</p>
+          <p>{birthPlace}</p>
           <p>{biography}</p>
         </div>
       </section>

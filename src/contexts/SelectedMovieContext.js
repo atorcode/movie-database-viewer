@@ -14,7 +14,22 @@ const SelectedMovieProvider = ({ children }) => {
     fetcher
   );
 
-  let title, release, image, score, tagline, overview, runtime, cast, rating;
+  let title,
+    release,
+    image,
+    score,
+    tagline,
+    overview,
+    runtime,
+    formattedRuntime,
+    cast,
+    rating,
+    budget,
+    revenue,
+    spokenLanguages,
+    production,
+    directedBy,
+    writtenBy;
   if (data) {
     ({
       title,
@@ -25,11 +40,18 @@ const SelectedMovieProvider = ({ children }) => {
       overview,
       runtime,
       cast,
+      budget,
+      revenue,
+      spoken_languages: spokenLanguages,
+      production_companies: production,
     } = data);
-  }
-  const formattedRuntime = formatMinutes(runtime);
-  if (data) {
     ({ cast } = data.credits);
+    directedBy = data.credits.crew.filter((crewMember) => {
+      return crewMember.job.toLowerCase() === "director";
+    });
+    writtenBy = data.credits.crew.filter((crewMember) => {
+      return crewMember.job.toLowerCase() === "writer";
+    });
     // Find the first release date that has a certified rating
     rating = data.release_dates.results
       .find((result) => {
@@ -38,6 +60,7 @@ const SelectedMovieProvider = ({ children }) => {
       .release_dates.find((date) => {
         return date.certification !== "";
       }).certification;
+    formattedRuntime = formatMinutes(runtime);
   }
 
   return (
@@ -52,6 +75,12 @@ const SelectedMovieProvider = ({ children }) => {
         formattedRuntime,
         cast,
         rating,
+        budget,
+        revenue,
+        production,
+        spokenLanguages,
+        directedBy,
+        writtenBy,
       }}
     >
       {children}

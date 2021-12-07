@@ -9,14 +9,14 @@ const Cast = () => {
       <div>
         {cast &&
           cast.map((castMember) => {
-            const { id, name, character, profile_path } = castMember;
+            const { id, name, character, profile_path: image } = castMember;
             return (
               <CastMember
                 key={id}
                 id={id}
                 name={name}
                 character={character}
-                profile_path={profile_path}
+                image={image}
               />
             );
           })}

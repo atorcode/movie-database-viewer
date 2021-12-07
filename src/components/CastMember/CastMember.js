@@ -2,15 +2,15 @@ import styles from "./CastMember.module.scss";
 import defaultProfilePicture from "../../images/default-profile-picture.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-const CastMember = ({ id, name, character, profile_path }) => {
+const CastMember = ({ id, name, character, image }) => {
   return (
     <Link to={`/actor/${id}`} className={styles["actor-link"]}>
       <article className={styles["cast-member"]}>
         <div className={styles["image-container"]}>
           <img
             src={
-              profile_path
-                ? `https://image.tmdb.org/t/p/w200${profile_path}`
+              image
+                ? `https://image.tmdb.org/t/p/w200${image}`
                 : defaultProfilePicture
             }
             alt={name}
@@ -28,7 +28,7 @@ const CastMember = ({ id, name, character, profile_path }) => {
 CastMember.propTypes = {
   name: PropTypes.string.isRequired,
   character: PropTypes.string.isRequired,
-  profile_path: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default CastMember;
