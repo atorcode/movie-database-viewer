@@ -7,7 +7,7 @@ const Cast = () => {
     <section className={styles["cast-section"]}>
       <h2>Cast</h2>
       {cast && (
-        <div>
+        <div className={styles["cast-container"]}>
           {cast.map((castMember) => {
             const { id, name, character, profile_path: image } = castMember;
             return (

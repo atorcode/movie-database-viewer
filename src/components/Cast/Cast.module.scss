@@ -1,17 +1,17 @@
 .cast-section {
-  padding: 2rem 0;
+  padding-bottom: 2rem;
 
   h2 {
     text-align: center;
     margin-bottom: 0.5rem;
   }
 
-  div {
-    width: 90vw;
+  .cast-container {
+    width: 70vw;
     margin: 0 auto;
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
   }
 }

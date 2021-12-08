@@ -40,10 +40,11 @@ const formatDate = (date) => {
 
 // Takes an array and the singular form of a string then returns a plural form if the given array has more than one element.
 const singularOrPlural = (arr, singularForm) => {
-  if (!Array.isArray(arr) || typeof singularForm !== "string") {
-    return;
-  }
-  if (arr.length < 1) {
+  if (
+    !Array.isArray(arr) ||
+    arr.length === 0 ||
+    typeof singularForm !== "string"
+  ) {
     return;
   }
   if (arr.length === 1) {
