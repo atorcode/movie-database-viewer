@@ -6,9 +6,9 @@ const Cast = () => {
   return (
     <section className={styles["cast-section"]}>
       <h2>Cast</h2>
-      <div>
-        {cast &&
-          cast.map((castMember) => {
+      {cast && (
+        <div>
+          {cast.map((castMember) => {
             const { id, name, character, profile_path: image } = castMember;
             return (
               <CastMember
@@ -20,7 +20,8 @@ const Cast = () => {
               />
             );
           })}
-      </div>
+        </div>
+      )}
     </section>
   );
 };

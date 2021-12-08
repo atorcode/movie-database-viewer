@@ -53,12 +53,13 @@ const Actor = () => {
           <p>{biography}</p>
         </div>
       </section>
-      <section>
-        {moviesActedIn &&
-          moviesActedIn.map((movie) => {
+      {moviesActedIn && (
+        <section>
+          {moviesActedIn.map((movie) => {
             return <li key={movie.id}>{movie.title}</li>;
           })}
-      </section>
+        </section>
+      )}
     </main>
   );
 };

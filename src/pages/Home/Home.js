@@ -8,12 +8,13 @@ const Home = (props) => {
     <main className={styles["main-content"]}>
       <section>
         <h1>Trending Movies</h1>
-        <div className={styles["movies-container"]}>
-          {displayedMovies &&
-            displayedMovies.map((movie) => {
+        {displayedMovies && (
+          <div className={styles["movies-container"]}>
+            {displayedMovies.map((movie) => {
               return <MovieCard key={movie.id} {...movie} />;
             })}
-        </div>
+          </div>
+        )}
         <LoadButton {...props} />
       </section>
     </main>
