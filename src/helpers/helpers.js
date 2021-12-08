@@ -38,4 +38,24 @@ const formatDate = (date) => {
   return `${month} ${day}, ${year}`;
 };
 
-export { formatMinutes, formatDate };
+// Takes an array and the singular form of a string then returns a plural form if the given array has more than one element.
+const singularOrPlural = (arr, singularForm) => {
+  if (!Array.isArray(arr) || typeof singularForm !== "string") {
+    return;
+  }
+  if (arr.length < 1) {
+    return;
+  }
+  if (arr.length === 1) {
+    return singularForm;
+  }
+  if (arr.length > 1) {
+    if (singularForm.slice(-1).toLowerCase() === "y") {
+      return singularForm.slice(0, -1) + "ies";
+    } else {
+      return singularForm + "s";
+    }
+  }
+};
+
+export { formatMinutes, formatDate, singularOrPlural };

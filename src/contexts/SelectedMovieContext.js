@@ -17,6 +17,7 @@ const SelectedMovieProvider = ({ children }) => {
   let title,
     image,
     score,
+    scoreVotes,
     tagline,
     overview,
     runtime,
@@ -38,6 +39,7 @@ const SelectedMovieProvider = ({ children }) => {
       backdrop_path: image,
       release_date: release,
       vote_average: score,
+      vote_count: scoreVotes,
       tagline,
       overview,
       runtime,
@@ -56,7 +58,6 @@ const SelectedMovieProvider = ({ children }) => {
       return crewMember.job.toLowerCase() === "screenplay";
     });
     console.log(data);
-    console.log(writtenBy);
 
     // Find the first release date that has a certified rating
     rating = data.release_dates.results
@@ -78,6 +79,7 @@ const SelectedMovieProvider = ({ children }) => {
         formattedRelease,
         image,
         score,
+        scoreVotes,
         tagline,
         overview,
         formattedRuntime,
