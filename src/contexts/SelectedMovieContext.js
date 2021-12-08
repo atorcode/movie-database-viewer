@@ -57,16 +57,22 @@ const SelectedMovieProvider = ({ children }) => {
     writtenBy = data.credits.crew.filter((crewMember) => {
       return crewMember.job.toLowerCase() === "screenplay";
     });
+
     console.log(data);
 
-    // Find the first release date that has a certified rating
-    rating = data.release_dates.results
-      .find((result) => {
-        return result.iso_3166_1 === "US";
-      })
-      .release_dates.find((date) => {
-        return date.certification !== "";
-      }).certification;
+    // Find the first release date that has a certified rating. If no release has a certified rating, return "NR".
+    let USreleases = data.release_dates.results.find((result) => {
+      return result.iso_3166_1 === "US";
+    });
+    let USreleasesWithRating = USreleases.release_dates.filter(
+      (releaseDate) => releaseDate.certification !== ""
+    );
+    if (USreleasesWithRating.length === 0) {
+      rating = "NR";
+    } else {
+      rating = USreleasesWithRating[0].certification;
+    }
+
     formattedRuntime = formatMinutes(runtime);
     formattedRelease = formatDate(release);
   }

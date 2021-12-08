@@ -22,8 +22,12 @@
     margin: 0.5rem 0;
   }
 
-  .github-icon {
+  a {
     margin-top: 1.25rem;
+  }
+
+  .github-icon {
+    // margin-top: 1.25rem;
     color: v.$secondary-color;
     width: 2rem;
     height: auto;
