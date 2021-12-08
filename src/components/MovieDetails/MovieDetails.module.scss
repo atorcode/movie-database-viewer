@@ -1,0 +1,4 @@
+@use "../../variables" as v;
+.movie-details {
+  background-color: v.$primary-color-light;
+}

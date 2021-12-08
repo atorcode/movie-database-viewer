@@ -18,7 +18,11 @@ const CastMember = ({ id, name, character, image }) => {
         </div>
         <p>{name}</p>
         <p className={styles["character"]}>
-          <span>as</span> {character}
+          {character && (
+            <>
+              <span>as</span> {character}
+            </>
+          )}
         </p>
       </article>
     </Link>

@@ -1,8 +1,8 @@
 @use "../../variables" as v;
 
 .footer {
-  background-color: v.$primary-color;
-  filter: brightness(85%);
+  background-color: v.$primary-color-dark;
+  color: #eeeeee;
   padding: 2rem 0;
   display: flex;
   flex-direction: column;

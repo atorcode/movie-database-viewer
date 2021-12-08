@@ -37,13 +37,14 @@ const MovieDetails = () => {
   });
 
   return (
-    <section>
+    <section className={styles["movie-details"]}>
       <h4>TMDB User Score</h4>
       <p>
         {score}/10 based on {scoreVotes} votes
       </p>
       <h4>Release Date</h4>
-      <p>{formattedRelease}</p>
+      <p>{formattedRelease || "N/A"}</p>
+      {/* All JSX below this line is conditionally rendered */}
       {formatter.format(budget) !== "$0" && (
         <>
           <h4>Budget</h4>
