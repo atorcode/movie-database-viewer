@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import fetcher from "../helpers/fetcher";
-import { formatMinutes } from "../helpers/helpers";
+import { formatMinutes, formatDate } from "../helpers/helpers";
 
 const SelectedMovieContext = React.createContext();
 
@@ -15,13 +15,14 @@ const SelectedMovieProvider = ({ children }) => {
   );
 
   let title,
-    release,
     image,
     score,
     tagline,
     overview,
     runtime,
     formattedRuntime,
+    release,
+    formattedRelease,
     cast,
     rating,
     budget,
@@ -66,6 +67,7 @@ const SelectedMovieProvider = ({ children }) => {
         return date.certification !== "";
       }).certification;
     formattedRuntime = formatMinutes(runtime);
+    formattedRelease = formatDate(release);
   }
 
   return (
@@ -73,6 +75,7 @@ const SelectedMovieProvider = ({ children }) => {
       value={{
         title,
         release,
+        formattedRelease,
         image,
         score,
         tagline,
