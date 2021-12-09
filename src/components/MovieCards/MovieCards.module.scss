@@ -1,0 +1,18 @@
+@use "../../variables" as v;
+
+.header {
+  color: v.$secondary-color;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.movies-container {
+  width: 90vw;
+  margin: 0 auto;
+  padding-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+}

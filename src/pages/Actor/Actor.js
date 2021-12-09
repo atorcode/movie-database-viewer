@@ -3,6 +3,7 @@ import styles from "./Actor.module.scss";
 import fetcher from "../../helpers/fetcher";
 import useSWR from "swr";
 import ActorInfo from "../../components/ActorInfo";
+import MovieCards from "../../components/MovieCards";
 
 const Actor = () => {
   const { actorId } = useParams();
@@ -33,8 +34,6 @@ const Actor = () => {
     moviesAsActor = movieCredits.cast;
   }
 
-  console.log(moviesAsActor);
-
   const propsToPass = {
     name,
     birthday,
@@ -42,6 +41,8 @@ const Actor = () => {
     deathday,
     biography,
   };
+
+  console.log(moviesAsActor);
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
@@ -51,13 +52,14 @@ const Actor = () => {
         />
         <ActorInfo {...propsToPass} />
       </section>
-      {moviesAsActor && (
+      {/* {moviesAsActor && (
         <section className={styles["movies-section"]}>
           {moviesAsActor.map((movie) => {
             return <></>;
           })}
         </section>
-      )}
+      )} */}
+      <MovieCards moviesToDisplay={moviesAsActor} header={"Filmography"} />
     </main>
   );
 };

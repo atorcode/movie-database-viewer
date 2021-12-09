@@ -1,29 +1,14 @@
 import styles from "./Home.module.scss";
-import MovieCard from "../../components/MovieCard";
+import MovieCards from "../../components/MovieCards";
 import LoadButton from "../../components/_basic/LoadButton";
 import PropTypes from "prop-types";
 const Home = (props) => {
   const { displayedMovies } = props;
 
-  const DisplayedMovies = ({ moviesToDisplay, header }) => {
-    return (
-      moviesToDisplay && (
-        <>
-          <h1>{header}</h1>
-          <div className={styles["movies-container"]}>
-            {moviesToDisplay.map((movie) => {
-              return <MovieCard key={movie.id} {...movie} />;
-            })}
-          </div>
-        </>
-      )
-    );
-  };
-
   return (
     <main className={styles["main-content"]}>
       <section>
-        <DisplayedMovies
+        <MovieCards
           moviesToDisplay={displayedMovies}
           header={"Trending Movies"}
         />

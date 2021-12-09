@@ -34,7 +34,7 @@ MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   release_date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  poster_path: PropTypes.string.isRequired,
+  poster_path: PropTypes.string,
   vote_average: PropTypes.number.isRequired,
 };
 
