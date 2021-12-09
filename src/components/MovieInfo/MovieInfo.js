@@ -1,9 +1,10 @@
 import styles from "./MovieInfo.module.scss";
 import { FaStar } from "react-icons/fa";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
+import { formatMinutes } from "../../helpers/helpers";
 
 const MovieInfo = () => {
-  const { title, release, score, tagline, overview, formattedRuntime, rating } =
+  const { title, release, score, tagline, overview, runtime, rating } =
     useSelectedMovieContext();
 
   return (
@@ -12,7 +13,8 @@ const MovieInfo = () => {
       <h2>{tagline}</h2>
       <p>
         {release && release.substring(0, 4)} &#183; {rating} &#183;{" "}
-        {formattedRuntime} &#183; <FaStar className={styles["star-icon"]} />
+        {formatMinutes(runtime)} &#183;{" "}
+        <FaStar className={styles["star-icon"]} />
         {score}
       </p>
 

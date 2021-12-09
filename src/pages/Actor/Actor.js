@@ -12,11 +12,9 @@ const Actor = () => {
 
   let name,
     birthday,
-    formattedBirthday,
     deathday,
-    formattedDeathday,
     biography,
-    birthPlace,
+    birthplace,
     image,
     movieCredits,
     moviesActedIn;
@@ -27,30 +25,42 @@ const Actor = () => {
       birthday,
       deathday,
       biography,
-      place_of_birth: birthPlace,
+      place_of_birth: birthplace,
       profile_path: image,
       movie_credits: movieCredits,
     } = data);
     moviesActedIn = movieCredits.cast;
-
-    formattedBirthday = formatDate(birthday);
-    formattedDeathday = formatDate(deathday);
   }
 
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
         <img
-          src={image && `https://image.tmdb.org/t/p/w400${image}`}
+          src={image && `https://image.tmdb.org/t/p/w300${image}`}
           alt={name}
         />
         <div className={styles["actor-info"]}>
           <h1>{name}</h1>
-          <p>
-            {formattedBirthday} - {formattedDeathday}
-          </p>
-          <p>{birthPlace}</p>
-          <p>{biography}</p>
+          {birthday && (
+            <>
+              <h4>Born</h4>
+              <p>
+                {formatDate(birthday)} {birthplace && <>in {birthplace}</>}
+              </p>
+            </>
+          )}
+          {deathday && (
+            <>
+              <h4>Died</h4>
+              <p>{formatDate(deathday)}</p>
+            </>
+          )}
+          {biography && (
+            <>
+              <h4>Biography</h4>
+              <p>{biography}</p>
+            </>
+          )}
         </div>
       </section>
       {moviesActedIn && (

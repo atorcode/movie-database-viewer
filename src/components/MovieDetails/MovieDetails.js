@@ -1,11 +1,11 @@
 import styles from "./MovieDetails.module.scss";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
-import { singularOrPlural } from "../../helpers/helpers";
+import { formatDate, singularOrPlural } from "../../helpers/helpers";
 const MovieDetails = () => {
   const {
     score,
     scoreVotes,
-    formattedRelease,
+    release,
     genreInfo,
     production,
     directedBy,
@@ -14,6 +14,12 @@ const MovieDetails = () => {
     budget,
     revenue,
   } = useSelectedMovieContext();
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
 
   const renderList = (arr, categorySingularForm) => {
     if (
@@ -53,12 +59,6 @@ const MovieDetails = () => {
     );
   };
 
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  });
-
   return (
     <section className={styles["movie-details"]}>
       {/* Score and release dates will be rendered regardless of values */}
@@ -67,7 +67,7 @@ const MovieDetails = () => {
         {score}/10 based on {scoreVotes} votes
       </p>
       <h4>Release Date</h4>
-      <p>{formattedRelease || "N/A"}</p>
+      <p>{formatDate(release) || "N/A"}</p>
       {/* All JSX below this line is conditionally rendered */}
       {renderMoney("Budget", budget)}
       {renderMoney("Revenue", revenue)}
