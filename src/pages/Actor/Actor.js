@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import styles from "./Actor.module.scss";
 import fetcher from "../../helpers/fetcher";
-import { formatDate } from "../../helpers/helpers";
 import useSWR from "swr";
+import ActorInfo from "../../components/ActorInfo";
 const Actor = () => {
   const { actorId } = useParams();
   const { data } = useSWR(
@@ -32,6 +32,13 @@ const Actor = () => {
     moviesActedIn = movieCredits.cast;
   }
 
+  const propsToPass = {
+    name,
+    birthday,
+    birthplace,
+    deathday,
+    biography,
+  };
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
@@ -39,29 +46,7 @@ const Actor = () => {
           src={image && `https://image.tmdb.org/t/p/w300${image}`}
           alt={name}
         />
-        <div className={styles["actor-info"]}>
-          <h1>{name}</h1>
-          {birthday && (
-            <>
-              <h4>Born</h4>
-              <p>
-                {formatDate(birthday)} {birthplace && <>in {birthplace}</>}
-              </p>
-            </>
-          )}
-          {deathday && (
-            <>
-              <h4>Died</h4>
-              <p>{formatDate(deathday)}</p>
-            </>
-          )}
-          {biography && (
-            <>
-              <h4>Biography</h4>
-              <p>{biography}</p>
-            </>
-          )}
-        </div>
+        <ActorInfo {...propsToPass} />
       </section>
       {moviesActedIn && (
         <section>
