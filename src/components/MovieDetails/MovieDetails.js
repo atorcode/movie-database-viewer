@@ -1,6 +1,7 @@
 import styles from "./MovieDetails.module.scss";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
 import { formatDate, singularOrPlural } from "../../helpers/helpers";
+
 const MovieDetails = () => {
   const {
     score,
@@ -21,7 +22,7 @@ const MovieDetails = () => {
     maximumFractionDigits: 0,
   });
 
-  const renderList = (arr, categorySingularForm) => {
+  const LabeledList = ({ categorySingularForm, arr }) => {
     if (
       !Array.isArray(arr) ||
       arr.length < 1 ||
@@ -31,7 +32,7 @@ const MovieDetails = () => {
     }
     return (
       <>
-        <h4>{singularOrPlural(arr, categorySingularForm)}</h4>
+        <h4>{singularOrPlural(categorySingularForm, arr)}</h4>
         <ul>
           {arr.map((item) => {
             return (
@@ -45,9 +46,9 @@ const MovieDetails = () => {
     );
   };
 
-  const renderMoney = (category, amount) => {
+  const MoneyGrouping = ({ category, amount }) => {
     if (typeof amount !== "number" || typeof category !== "string") {
-      return;
+      return null;
     }
     return (
       formatter.format(amount) !== "$0" && (
@@ -69,13 +70,19 @@ const MovieDetails = () => {
       <h4>Release Date</h4>
       <p>{formatDate(release) || "N/A"}</p>
       {/* All JSX below this line is conditionally rendered */}
-      {renderMoney("Budget", budget)}
-      {renderMoney("Revenue", revenue)}
-      {renderList(directedBy, "Director")}
-      {renderList(writtenBy, "Writer")}
-      {renderList(production, "Production Company")}
-      {renderList(genreInfo, "Genre")}
-      {renderList(spokenLanguages, "Spoken Language")}
+      <MoneyGrouping category={"Budget"} amount={budget} />
+      <MoneyGrouping category={"Revenue"} amount={revenue} />
+      <LabeledList categorySingularForm={"Director"} arr={directedBy} />
+      <LabeledList categorySingularForm={"Writer"} arr={writtenBy} />
+      <LabeledList
+        categorySingularForm={"Production Company"}
+        arr={production}
+      />
+      <LabeledList categorySingularForm={"Genre"} arr={genreInfo} />
+      <LabeledList
+        categorySingularForm={"Spoken Language"}
+        arr={spokenLanguages}
+      />
     </section>
   );
 };

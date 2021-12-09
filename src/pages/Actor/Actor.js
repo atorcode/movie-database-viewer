@@ -3,6 +3,7 @@ import styles from "./Actor.module.scss";
 import fetcher from "../../helpers/fetcher";
 import useSWR from "swr";
 import ActorInfo from "../../components/ActorInfo";
+
 const Actor = () => {
   const { actorId } = useParams();
   const { data } = useSWR(
@@ -17,7 +18,7 @@ const Actor = () => {
     birthplace,
     image,
     movieCredits,
-    moviesActedIn;
+    moviesAsActor;
 
   if (data) {
     ({
@@ -29,8 +30,10 @@ const Actor = () => {
       profile_path: image,
       movie_credits: movieCredits,
     } = data);
-    moviesActedIn = movieCredits.cast;
+    moviesAsActor = movieCredits.cast;
   }
+
+  console.log(moviesAsActor);
 
   const propsToPass = {
     name,
@@ -48,10 +51,10 @@ const Actor = () => {
         />
         <ActorInfo {...propsToPass} />
       </section>
-      {moviesActedIn && (
-        <section>
-          {moviesActedIn.map((movie) => {
-            return <li key={movie.id}>{movie.title}</li>;
+      {moviesAsActor && (
+        <section className={styles["movies-section"]}>
+          {moviesAsActor.map((movie) => {
+            return <></>;
           })}
         </section>
       )}

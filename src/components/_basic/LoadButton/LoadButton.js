@@ -3,6 +3,7 @@ import styles from "./LoadButton.module.scss";
 import useSWR from "swr";
 import fetcher from "../../../helpers/fetcher";
 import PropTypes from "prop-types";
+
 const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
   const [startFetch, setStartFetch] = useState(false);
   const { data } = useSWR(() => {
