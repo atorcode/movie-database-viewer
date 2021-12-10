@@ -51,13 +51,6 @@ const Actor = () => {
         />
         <ActorInfo {...propsToPass} />
       </section>
-      {/* {moviesAsActor && (
-        <section className={styles["movies-section"]}>
-          {moviesAsActor.map((movie) => {
-            return <></>;
-          })}
-        </section>
-      )} */}
       <MovieCards moviesToDisplay={moviesAsActor} header={"Filmography"} />
     </main>
   );

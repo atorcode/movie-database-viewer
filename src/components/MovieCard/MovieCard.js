@@ -2,6 +2,7 @@ import styles from "./MovieCard.module.scss";
 import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import defaultImage from "../../images/no-image-found.png";
 const MovieCard = (props) => {
   const {
     id,
@@ -14,7 +15,10 @@ const MovieCard = (props) => {
   return (
     <Link to={`/movie/${id}`} className={styles["movie-card"]}>
       <article>
-        <img src={`https://image.tmdb.org/t/p/w500${image}`} alt={title} />
+        <img
+          src={image ? `https://image.tmdb.org/t/p/w500${image}` : defaultImage}
+          alt={title}
+        />
         <header>
           <h4 className={styles["title"]}>{title}</h4>
           <div className={styles["release-year-and-score"]}>
@@ -36,7 +40,7 @@ const MovieCard = (props) => {
 
 MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
-  release_date: PropTypes.string.isRequired,
+  release_date: PropTypes.string,
   title: PropTypes.string.isRequired,
   poster_path: PropTypes.string,
   vote_average: PropTypes.number.isRequired,

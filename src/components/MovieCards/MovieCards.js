@@ -20,7 +20,7 @@ const MovieCards = ({ moviesToDisplay, header }) => {
 };
 
 MovieCards.propTypes = {
-  moviesToDisplay: PropTypes.array.isRequired,
+  moviesToDisplay: PropTypes.array,
   header: PropTypes.string.isRequired,
 };
 
