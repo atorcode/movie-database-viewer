@@ -42,7 +42,6 @@ const Actor = () => {
     biography,
   };
 
-  console.log(moviesAsActor);
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>

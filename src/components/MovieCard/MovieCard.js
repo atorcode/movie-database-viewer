@@ -11,8 +11,6 @@ const MovieCard = (props) => {
     vote_average: score,
   } = props;
 
-  console.log(release, title);
-
   return (
     <Link to={`/movie/${id}`} className={styles["movie-card"]}>
       <article>
