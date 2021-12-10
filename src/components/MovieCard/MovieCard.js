@@ -11,6 +11,8 @@ const MovieCard = (props) => {
     vote_average: score,
   } = props;
 
+  console.log(release, title);
+
   return (
     <Link to={`/movie/${id}`} className={styles["movie-card"]}>
       <article>
@@ -18,7 +20,11 @@ const MovieCard = (props) => {
         <header>
           <h4 className={styles["title"]}>{title}</h4>
           <div className={styles["release-year-and-score"]}>
-            <p className={styles["release-year"]}>{release.substring(0, 4)}</p>
+            {release && (
+              <p className={styles["release-year"]}>
+                {release.substring(0, 4)}
+              </p>
+            )}
             <p className={styles["score"]}>
               <FaStar />
               <span>{score}</span>

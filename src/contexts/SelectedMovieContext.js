@@ -61,13 +61,17 @@ const SelectedMovieProvider = ({ children }) => {
     let USreleases = data.release_dates.results.find((result) => {
       return result.iso_3166_1 === "US";
     });
-    let USreleasesWithRating = USreleases.release_dates.filter(
-      (releaseDate) => releaseDate.certification !== ""
-    );
-    if (USreleasesWithRating.length === 0) {
-      rating = "NR";
+    if (USreleases) {
+      let USreleasesWithRating = USreleases.release_dates.filter(
+        (releaseDate) => releaseDate.certification !== ""
+      );
+      if (USreleasesWithRating.length === 0) {
+        rating = "NR";
+      } else {
+        rating = USreleasesWithRating[0].certification;
+      }
     } else {
-      rating = USreleasesWithRating[0].certification;
+      rating = "NR";
     }
   }
 

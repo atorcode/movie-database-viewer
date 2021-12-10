@@ -13,7 +13,8 @@ const formatMinutes = (totalMinutes) => {
 
 // Date will be given in the format: YYYY-MM-DD
 const formatDate = (date) => {
-  if (typeof date !== "string") {
+  console.log(date);
+  if (!date || typeof date !== "string") {
     return;
   }
   const monthNames = [

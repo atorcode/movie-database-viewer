@@ -10,10 +10,10 @@ const MovieInfo = () => {
   return (
     <div className={styles["movie-info"]}>
       <h1>{title}</h1>
-      <h2>{tagline}</h2>
+      {tagline && <h2>{tagline}</h2>}
       <p>
-        {release && release.substring(0, 4)} &#183; {rating} &#183;{" "}
-        {formatMinutes(runtime)} &#183;{" "}
+        {release ? release.substring(0, 4) : "Not Yet Released"} &#183; {rating}{" "}
+        &#183; {formatMinutes(runtime)} &#183;{" "}
         <FaStar className={styles["star-icon"]} />
         {score}
       </p>

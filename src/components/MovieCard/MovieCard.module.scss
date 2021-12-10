@@ -40,9 +40,11 @@
 
 .release-year-and-score {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
+
 .release-year {
+  margin-right: auto;
   color: #ffffff;
   padding: 0 0.5rem 0.5rem 0.5rem;
   font-size: 0.8rem;
