@@ -4,6 +4,7 @@ import fetcher from "../../helpers/fetcher";
 import useSWR from "swr";
 import ActorInfo from "../../components/ActorInfo";
 import MovieCards from "../../components/MovieCards";
+import defaultProfilePicture from "../../images/default-profile-picture.png";
 
 const Actor = () => {
   const { actorId } = useParams();
@@ -46,7 +47,11 @@ const Actor = () => {
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
         <img
-          src={image && `https://image.tmdb.org/t/p/w300${image}`}
+          src={
+            image
+              ? `https://image.tmdb.org/t/p/w300${image}`
+              : defaultProfilePicture
+          }
           alt={name}
         />
         <ActorInfo {...propsToPass} />
