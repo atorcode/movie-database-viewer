@@ -1,5 +1,6 @@
 .main-content {
   color: #eeeeee;
+  display: flex;
 
   .actor-profile {
     margin: 0 3rem;
@@ -12,5 +13,9 @@
       width: 350px;
       height: auto;
     }
+  }
+
+  .movie-cards-container {
+    flex-grow: 1;
   }
 }

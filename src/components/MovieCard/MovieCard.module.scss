@@ -4,7 +4,8 @@
   background-color: v.$primary-color-light;
   color: v.$secondary-color;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
+  min-width: 220px;
   justify-self: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;

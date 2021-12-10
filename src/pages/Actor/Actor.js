@@ -51,7 +51,9 @@ const Actor = () => {
         />
         <ActorInfo {...propsToPass} />
       </section>
-      <MovieCards moviesToDisplay={moviesAsActor} header={"Filmography"} />
+      <section className={styles["movie-cards-container"]}>
+        <MovieCards moviesToDisplay={moviesAsActor} header={"Filmography"} />
+      </section>
     </main>
   );
 };
