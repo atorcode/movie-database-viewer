@@ -15,7 +15,7 @@ const Navbar = () => {
       : null;
   }, fetcher);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <nav className={styles["navigation-bar"]}>

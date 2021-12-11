@@ -1,9 +1,10 @@
 .search-results {
-  // position: absolute;
-  // margin: 0 auto;
-  // width: 100%;
-  // display: none;
+  z-index: 9999;
+  position: absolute;
+  display: none;
+  margin: 0 auto;
+  inset: 79% 0 auto 0;
+  width: 95%;
 
   background-color: teal;
-  // visibility: hidden;
 }
