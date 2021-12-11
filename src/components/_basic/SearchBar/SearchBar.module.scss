@@ -1,15 +1,17 @@
 @use "../../../variables" as v;
 
 .search-and-results {
+  z-index: 9999;
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 }
 .search-bar-container {
   height: 57%;
-  width: 100%;
+  width: 98%;
   background-color: white;
   display: flex;
   align-items: center;
