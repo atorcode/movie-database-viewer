@@ -2,7 +2,6 @@ import { useRef } from "react";
 import styles from "./SearchBar.module.scss";
 import { FiSearch } from "react-icons/fi";
 import PropTypes from "prop-types";
-import SearchResults from "../../SearchResults";
 
 const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
   const inputEl = useRef(null);
@@ -31,7 +30,6 @@ const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
         }}
       />
     </div>
-    // <SearchResults />
   );
 };
 
