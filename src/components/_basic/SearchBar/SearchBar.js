@@ -6,6 +6,7 @@ import SearchResults from "../../SearchResults";
 
 const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
   const inputEl = useRef(null);
+  const searchResultsEl = useRef(null);
 
   return (
     <div className={styles["search-and-results"]}>
@@ -29,14 +30,16 @@ const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
               e.target.parentNode.classList.remove(
                 `${styles["search-bar-container-flattened"]}`
               );
+              searchResultsEl.current.style.display = "none";
             } else {
               setStartFetch(true);
               e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
+              searchResultsEl.current.style.display = "block";
             }
           }}
         />
       </div>
-      <SearchResults />
+      <SearchResults ref={searchResultsEl} />
     </div>
   );
 };
