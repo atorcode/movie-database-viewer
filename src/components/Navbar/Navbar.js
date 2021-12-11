@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
-import SearchBar from "../_basic/SearchBar";
 import { Link } from "react-router-dom";
 import useSWR from "swr";
 import fetcher from "../../helpers/fetcher";
+import SearchBar from "../_basic/SearchBar";
 
 const Navbar = () => {
   const [movieToSearch, setMovieToSearch] = useState("");

@@ -1,4 +1,8 @@
 @use "../../../variables" as v;
+
+.search-and-results {
+  height: 100%;
+}
 .search-bar-container {
   height: 65%;
   margin: 1rem;
@@ -18,7 +22,8 @@
     height: 100%;
     outline: none;
     border: none;
-    border-radius: inherit;
+    border-radius: 0 1rem 1rem 0;
+    padding-left: 0.5rem;
     font-size: 1rem;
   }
   &:focus-within {
