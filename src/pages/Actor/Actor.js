@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Actor.module.scss";
 import fetcher from "../../helpers/fetcher";
@@ -12,6 +13,10 @@ const Actor = () => {
     `https://api.themoviedb.org/3/person/${actorId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=movie_credits`,
     fetcher
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   let name,
     birthday,

@@ -8,14 +8,10 @@ const MovieBackgroundImage = () => {
     <div className={styles["image-container"]}>
       <div className={styles["gradient-background"]}></div>
       {/* Render imageComingSoon default image only if the data has been fetched (title is truthy) and there is no associated image. This way, imageComingSoon will not be rendered during load. */}
-      <img
-        src={
-          title && !image
-            ? imageComingSoon
-            : `https://image.tmdb.org/t/p/original${image}`
-        }
-        alt={title}
-      />
+      {title && !image && <img src={imageComingSoon} alt={title} />}
+      {image && (
+        <img src={`https://image.tmdb.org/t/p/original${image}`} alt={title} />
+      )}
     </div>
   );
 };
