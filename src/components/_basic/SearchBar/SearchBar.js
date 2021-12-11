@@ -33,8 +33,14 @@ const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
               searchResultsEl.current.style.display = "none";
             } else {
               setStartFetch(true);
-              e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
-              searchResultsEl.current.style.display = "block";
+              if (
+                !e.target.parentNode.classList.contains(
+                  `${styles["search-bar-container-flattened"]}`
+                )
+              ) {
+                e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
+              }
+              searchResultsEl.current.style.display = "flex";
             }
           }}
         />

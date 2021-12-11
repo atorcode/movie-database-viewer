@@ -26,8 +26,7 @@
 
   &:hover,
   &:focus {
-    border: 2px solid v.$tertiary-color;
-    outline: none;
+    outline: 2px solid v.$tertiary-color;
   }
 
   &:hover img,

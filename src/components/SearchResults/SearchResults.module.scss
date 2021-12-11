@@ -8,10 +8,20 @@
   // note-to-self - 79% top
   inset: 12% 0 auto 0;
   width: 100%;
-  // dummy value
   height: 200px;
   border-radius: 0.25rem;
   background-color: v.$primary-color-dark;
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5), 4px 0 8px rgba(0, 0, 0, 0.5),
     0 4px 8px rgba(0, 0, 0, 0.5);
+
+  p {
+    color: v.$secondary-color;
+    font-size: 1.125rem;
+    font-weight: 400;
+    justify-self: center;
+    margin-top: 1.125rem;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
 }
