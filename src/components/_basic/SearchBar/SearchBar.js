@@ -43,6 +43,18 @@ const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
               searchResultsEl.current.style.display = "flex";
             }
           }}
+          onFocus={(e) => {
+            if (e.target.value.length !== 0) {
+              e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
+              searchResultsEl.current.style.display = "flex";
+            }
+          }}
+          onBlur={(e) => {
+            e.target.parentNode.classList.remove(
+              `${styles["search-bar-container-flattened"]}`
+            );
+            searchResultsEl.current.style.display = "none";
+          }}
         />
       </div>
       <SearchResults ref={searchResultsEl} />
