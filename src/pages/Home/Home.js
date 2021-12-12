@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Home.module.scss";
 import useSWR from "swr";
 import MovieCards from "../../components/MovieCards";
-import LoadButton from "../../components/_basic/LoadButton";
+import LoadButton from "../../components/LoadButton";
 import fetcher from "../../helpers/fetcher";
 
 const Home = () => {

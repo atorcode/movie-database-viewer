@@ -3,7 +3,7 @@ import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 import useSWR from "swr";
 import fetcher from "../../helpers/fetcher";
-import SearchBar from "../_basic/SearchBar";
+import SearchBar from "../SearchBar";
 
 const Navbar = () => {
   const [movieToSearch, setMovieToSearch] = useState("");
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles["navigation-bar"]}>
-      <Link to="/">
+      <Link to="/" className={styles["site-name-link"]}>
         <h2 className={styles["site-name"]}>Movie Database Viewer</h2>
       </Link>
       <SearchBar
