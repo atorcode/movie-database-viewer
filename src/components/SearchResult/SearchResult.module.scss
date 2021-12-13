@@ -18,4 +18,9 @@
   &:focus {
     background-color: v.$primary-color-light;
   }
+
+  &:focus {
+    // outline is disabled here since there is a clear visual cue for the focused element
+    outline: none;
+  }
 }

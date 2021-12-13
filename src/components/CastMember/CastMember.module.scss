@@ -1,14 +1,15 @@
 @use "../../variables" as v;
 
-.cast-member {
-  justify-self: center;
-  width: 100%;
-  color: v.$text-color;
-
+.actor-link {
   &:hover img,
   &:focus img {
     transform: scale(1.1);
   }
+}
+.cast-member {
+  justify-self: center;
+  width: 100%;
+  color: v.$text-color;
 
   .image-container {
     width: 100%;
