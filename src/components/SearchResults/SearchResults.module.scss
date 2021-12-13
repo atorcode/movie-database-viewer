@@ -3,9 +3,8 @@
 .search-results {
   z-index: -1;
   position: absolute;
-  display: none;
+  display: flex;
   margin: 0 auto;
-  // note-to-self - 79% top
   inset: 12% 0 auto 0;
   width: 100%;
   height: 200px;

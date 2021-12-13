@@ -17,16 +17,19 @@ const Navbar = () => {
 
   // console.log(data);
 
+  const propsToPass = {
+    movieToSearch,
+    setMovieToSearch,
+    setStartFetch,
+    data,
+  };
+
   return (
     <nav className={styles["navigation-bar"]}>
       <Link to="/" className={styles["site-name-link"]}>
         <h2 className={styles["site-name"]}>Movie Database Viewer</h2>
       </Link>
-      <SearchBar
-        movieToSearch={movieToSearch}
-        setMovieToSearch={setMovieToSearch}
-        setStartFetch={setStartFetch}
-      />
+      <SearchBar {...propsToPass} />
     </nav>
   );
 };

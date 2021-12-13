@@ -1,13 +1,14 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import styles from "./SearchBar.module.scss";
 import { FiSearch } from "react-icons/fi";
 import PropTypes from "prop-types";
 import SearchResults from "../SearchResults";
 
-const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
+const SearchBar = (props) => {
+  const [renderResults, setRenderResults] = useState(false);
   const inputEl = useRef(null);
-  const searchResultsEl = useRef(null);
 
+  const { movieToSearch, setMovieToSearch, setStartFetch } = props;
   return (
     <div className={styles["search-and-results"]}>
       <div className={styles["search-bar-container"]}>
@@ -30,7 +31,7 @@ const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
               e.target.parentNode.classList.remove(
                 `${styles["search-bar-container-flattened"]}`
               );
-              searchResultsEl.current.style.display = "none";
+              setRenderResults(false);
             } else {
               setStartFetch(true);
               if (
@@ -40,24 +41,24 @@ const SearchBar = ({ movieToSearch, setMovieToSearch, setStartFetch }) => {
               ) {
                 e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
               }
-              searchResultsEl.current.style.display = "flex";
+              setRenderResults(true);
             }
           }}
           onFocus={(e) => {
             if (e.target.value.length !== 0) {
               e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
-              searchResultsEl.current.style.display = "flex";
+              setRenderResults(true);
             }
           }}
           onBlur={(e) => {
             e.target.parentNode.classList.remove(
               `${styles["search-bar-container-flattened"]}`
             );
-            searchResultsEl.current.style.display = "none";
+            setRenderResults(false);
           }}
         />
       </div>
-      <SearchResults ref={searchResultsEl} />
+      {renderResults && <SearchResults data={props.data} />}
     </div>
   );
 };
@@ -66,6 +67,7 @@ SearchBar.propTypes = {
   movieToSearch: PropTypes.string.isRequired,
   setMovieToSearch: PropTypes.func.isRequired,
   setStartFetch: PropTypes.func.isRequired,
+  data: PropTypes.object,
 };
 
 export default SearchBar;
