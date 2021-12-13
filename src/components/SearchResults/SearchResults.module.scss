@@ -3,10 +3,10 @@
 .search-results-panel {
   z-index: -1;
   position: absolute;
-  margin: 0 auto;
+  padding: 2.67rem 0 0.5rem 0;
   inset: 12% 0 auto 0;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   border-radius: 0.25rem;
   background-color: v.$primary-color-dark;
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5), 4px 0 8px rgba(0, 0, 0, 0.5),
@@ -15,9 +15,8 @@
   .search-results {
     display: flex;
     flex-direction: column;
-    margin: 5.5% 0.25rem 0.25rem 0.25rem;
-    justify-content: center;
-    align-content: center;
+    max-height: 334px;
+    overflow: hidden;
   }
 
   .no-results {
@@ -31,5 +30,17 @@
     transform: translate(-50%, -50%);
 
     text-align: center;
+  }
+}
+
+@media (max-width: 1146px) {
+  .search-results-panel {
+    padding-top: 2.75rem;
+  }
+}
+
+@media (max-width: 810px) {
+  .search-results-panel {
+    padding-top: 4.1rem;
   }
 }
