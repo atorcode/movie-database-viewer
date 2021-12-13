@@ -3,23 +3,22 @@ import styles from "./SearchResults.module.scss";
 import SearchResult from "../SearchResult";
 
 const SearchResults = ({ data }) => {
-  const testArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  console.log(testArr);
+  let results;
+
+  if (data) {
+    ({ results } = data);
+  }
 
   return (
     <div className={styles["search-results-panel"]}>
-      {/* {data && (
+      {results && (
         <ul className={styles["search-results"]}>
-          {data.results.map((result) => {
-            return <SearchResult />;
+          {results.map((result) => {
+            return <SearchResult key={result.id} {...result} />;
           })}
         </ul>
-      )} */}
-      <ul className={styles["search-results"]}>
-        {testArr.map((result) => {
-          return <SearchResult />;
-        })}
-      </ul>
+      )}
+
       {/* {!data && <p>Loading</p>} */}
 
       {data && !data.total_results && (
