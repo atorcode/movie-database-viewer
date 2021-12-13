@@ -1,6 +1,6 @@
 @use "../../variables" as v;
 .main-content {
-  color: #eeeeee;
+  color: v.$text-color;
   display: flex;
 
   .actor-profile {
@@ -11,7 +11,7 @@
     gap: 0.5rem;
 
     img {
-      background-color: v.$primary-color-light;
+      background-color: v.$primary-color-light-alt;
     }
 
     & > * {

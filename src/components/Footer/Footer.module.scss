@@ -2,7 +2,7 @@
 
 .footer {
   background-color: v.$primary-color-dark;
-  color: #eeeeee;
+  color: v.$text-color;
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   justify-content: center;
 
   p {
-    color: #eeeeee;
+    color: v.$text-color;
   }
 
   .tmdb-shout-out {

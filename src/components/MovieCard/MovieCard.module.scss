@@ -1,7 +1,7 @@
 @use "../../variables" as v;
 
 .movie-card {
-  background-color: v.$primary-color-light;
+  background-color: v.$primary-color-light-alt;
   color: v.$secondary-color;
   width: 100%;
   max-width: 300px;
@@ -61,7 +61,7 @@
   margin-left: 4px;
 
   span {
-    color: #eeeeee;
+    color: v.$text-color;
     margin-left: 2px;
   }
 }

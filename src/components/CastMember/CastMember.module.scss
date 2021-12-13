@@ -3,7 +3,7 @@
 .cast-member {
   justify-self: center;
   width: 100%;
-  color: #eeeeee;
+  color: v.$text-color;
 
   &:hover img,
   &:focus img {
@@ -17,7 +17,7 @@
   }
 
   img {
-    background-color: v.$primary-color-light;
+    background-color: v.$primary-color-light-alt;
     transition: all 0.25s ease-in-out;
     width: 100%;
     height: auto;

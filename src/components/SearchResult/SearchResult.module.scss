@@ -1,14 +1,21 @@
+@use "../../variables" as v;
+
 .search-result {
   height: 2rem;
   line-height: 2rem;
   width: 98%;
   align-self: center;
   margin-bottom: 0.1rem;
-  border-radius: 0.25rem;
-  background-color: #eeeeee;
 }
 
 .search-link {
   display: block;
   padding: 0 0.5rem;
+  color: v.$text-color;
+  border-radius: 0.25rem;
+
+  &:hover,
+  &:focus {
+    background-color: v.$primary-color-light;
+  }
 }

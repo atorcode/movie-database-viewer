@@ -1,7 +1,7 @@
 @use "../../variables" as v;
 .main {
   // background-color: v.$primary-color;
-  color: #eeeeee;
+  color: v.$text-color;
   margin-top: -2rem;
 }
 
