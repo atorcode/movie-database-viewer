@@ -1,9 +1,8 @@
 @use "../../variables" as v;
 
-.search-results {
+.search-results-panel {
   z-index: -1;
   position: absolute;
-  display: flex;
   margin: 0 auto;
   inset: 12% 0 auto 0;
   width: 100%;
@@ -13,14 +12,24 @@
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5), 4px 0 8px rgba(0, 0, 0, 0.5),
     0 4px 8px rgba(0, 0, 0, 0.5);
 
-  p {
+  .search-results {
+    display: flex;
+    flex-direction: column;
+    margin: 5.5% 0.25rem 0.25rem 0.25rem;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .no-results {
     color: v.$secondary-color;
     font-size: 1.125rem;
     font-weight: 700;
-    justify-self: center;
-    margin-top: 1.125rem;
-    align-self: center;
-    width: 100%;
+
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+
     text-align: center;
   }
 }

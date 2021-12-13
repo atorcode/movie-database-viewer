@@ -16,6 +16,7 @@ const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
     if (data) {
       setDisplayedMovies([...displayedMovies, ...data.results]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return (
