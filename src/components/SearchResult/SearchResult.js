@@ -1,7 +1,7 @@
 import styles from "./SearchResult.module.scss";
 import { Link } from "react-router-dom";
 
-const SearchResult = ({ id, title }) => {
+const SearchResult = ({ id, title, release_date: release }) => {
   return (
     <li className={styles["search-result"]}>
       <Link
@@ -16,7 +16,8 @@ const SearchResult = ({ id, title }) => {
         }}
         className={styles["search-link"]}
       >
-        {title}
+        {title}{" "}
+        {release ? `(${release.substring(0, 4)})` : "(Unknown Release Date)"}
       </Link>
     </li>
   );

@@ -22,7 +22,9 @@ const SearchResults = ({ data }) => {
       {/* {!data && <p>Loading</p>} */}
 
       {data && !data.total_results && (
-        <p className={styles["no-results"]}>No matching results</p>
+        <div className={styles["no-results-container"]}>
+          <p className={styles["no-results"]}>No matching results</p>
+        </div>
       )}
     </div>
   );
