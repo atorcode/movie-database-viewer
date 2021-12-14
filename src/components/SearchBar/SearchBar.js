@@ -46,6 +46,8 @@ const SearchBar = (props) => {
           className={styles["search-form"]}
           onSubmit={(e) => {
             e.preventDefault();
+            // make this less ugly
+            searchResultsEl.current.children[0].children[0].children[0].click();
           }}
         >
           <input
@@ -70,7 +72,9 @@ const SearchBar = (props) => {
           />
         </form>
       </div>
-      {renderResults && <SearchResults data={props.data} />}
+      {renderResults && (
+        <SearchResults data={props.data} ref={searchResultsEl} />
+      )}
       {/* below for testing */}
       {/* <SearchResults data={props.data} ref={searchResultsEl} /> */}
     </div>

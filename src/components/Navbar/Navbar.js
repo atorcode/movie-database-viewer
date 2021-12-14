@@ -15,8 +15,6 @@ const Navbar = () => {
       : null;
   }, fetcher);
 
-  // console.log(data);
-
   const propsToPass = {
     movieToSearch,
     setMovieToSearch,
