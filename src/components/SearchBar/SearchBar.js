@@ -7,6 +7,7 @@ import SearchResults from "../SearchResults";
 const SearchBar = (props) => {
   const [renderResults, setRenderResults] = useState(false);
   const inputEl = useRef(null);
+  const searchResultsEl = useRef(null);
 
   const { movieToSearch, setMovieToSearch, setStartFetch } = props;
 
@@ -14,18 +15,18 @@ const SearchBar = (props) => {
     setMovieToSearch(event.target.value);
     if (event.target.value.length === 0) {
       setStartFetch(false);
-      event.target.parentNode.classList.remove(
+      event.target.parentNode.parentNode.classList.remove(
         `${styles["search-bar-container-flattened"]}`
       );
       setRenderResults(false);
     } else {
       setStartFetch(true);
       if (
-        !event.target.parentNode.classList.contains(
+        !event.target.parentNode.parentNode.classList.contains(
           `${styles["search-bar-container-flattened"]}`
         )
       ) {
-        event.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
+        event.target.parentNode.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
       }
       setRenderResults(true);
     }
@@ -40,30 +41,38 @@ const SearchBar = (props) => {
             inputEl.current.focus();
           }}
         />
-        <input
-          ref={inputEl}
-          type="search"
-          placeholder="Search for a movie..."
-          className={styles["search-bar"]}
-          value={movieToSearch}
-          onChange={(e) => handleSearch(e)}
-          onFocus={(e) => {
-            if (e.target.value.length !== 0) {
-              e.target.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
-              setRenderResults(true);
-            }
+
+        <form
+          className={styles["search-form"]}
+          onSubmit={(e) => {
+            e.preventDefault();
           }}
-          onBlur={(e) => {
-            e.target.parentNode.classList.remove(
-              `${styles["search-bar-container-flattened"]}`
-            );
-            setRenderResults(false);
-          }}
-        />
+        >
+          <input
+            ref={inputEl}
+            type="search"
+            placeholder="Search for a movie..."
+            className={styles["search-bar"]}
+            value={movieToSearch}
+            onChange={(e) => handleSearch(e)}
+            onFocus={(e) => {
+              if (e.target.value.length !== 0) {
+                e.target.parentNode.parentNode.className += ` ${styles["search-bar-container-flattened"]}`;
+                setRenderResults(true);
+              }
+            }}
+            onBlur={(e) => {
+              e.target.parentNode.parentNode.classList.remove(
+                `${styles["search-bar-container-flattened"]}`
+              );
+              setRenderResults(false);
+            }}
+          />
+        </form>
       </div>
       {/* {renderResults && <SearchResults data={props.data} />} */}
       {/* below for testing */}
-      <SearchResults data={props.data} />
+      <SearchResults data={props.data} ref={searchResultsEl} />
     </div>
   );
 };
