@@ -8,11 +8,9 @@
 }
 .cast-member {
   justify-self: center;
-  width: 100%;
   color: v.$text-color;
 
   .image-container {
-    width: 100%;
     height: auto;
     overflow: hidden;
   }
@@ -20,7 +18,6 @@
   img {
     background-color: v.$primary-color-light-alt;
     transition: all 0.25s ease-in-out;
-    width: 100%;
     height: auto;
   }
 

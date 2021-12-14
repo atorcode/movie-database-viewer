@@ -10,9 +10,9 @@
     width: 70vw;
     margin: 0 auto;
     display: grid;
-    justify-content: start;
+    justify-content: center;
 
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, 200px);
     gap: 1rem;
   }
 }
