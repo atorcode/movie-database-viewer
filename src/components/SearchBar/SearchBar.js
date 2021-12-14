@@ -47,7 +47,13 @@ const SearchBar = (props) => {
           onSubmit={(e) => {
             e.preventDefault();
             // make this less ugly
-            searchResultsEl.current.children[0].children[0].children[0].click();
+            if (
+              searchResultsEl &&
+              searchResultsEl.current &&
+              searchResultsEl.current.children[0]
+            ) {
+              searchResultsEl.current.children[0].children[0].children[0].click();
+            }
           }}
         >
           <input
