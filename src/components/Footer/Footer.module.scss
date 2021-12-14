@@ -11,6 +11,7 @@
 
   p {
     color: v.$text-color;
+    text-align: center;
   }
 
   .tmdb-shout-out {
@@ -27,7 +28,6 @@
   }
 
   .github-icon {
-    // margin-top: 1.25rem;
     color: v.$secondary-color;
     width: 2rem;
     height: auto;
