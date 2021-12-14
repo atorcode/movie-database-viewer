@@ -16,3 +16,9 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   gap: 1.5rem;
 }
+
+@media (min-width: 1598px) {
+  .movies-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

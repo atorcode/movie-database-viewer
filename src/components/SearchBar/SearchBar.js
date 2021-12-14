@@ -70,9 +70,9 @@ const SearchBar = (props) => {
           />
         </form>
       </div>
-      {/* {renderResults && <SearchResults data={props.data} />} */}
+      {renderResults && <SearchResults data={props.data} />}
       {/* below for testing */}
-      <SearchResults data={props.data} ref={searchResultsEl} />
+      {/* <SearchResults data={props.data} ref={searchResultsEl} /> */}
     </div>
   );
 };

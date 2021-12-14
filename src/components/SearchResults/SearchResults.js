@@ -12,7 +12,11 @@ const SearchResults = forwardRef(({ data }, searchResultsEl) => {
   // The following imitates the visual effect of focusing without actually focusing. The first search result is highlighted so the user knows that submitting the search form will bring up that result by default.
   useEffect(() => {
     let targetEl;
-    if (searchResultsEl.current && searchResultsEl.current.children[0]) {
+    if (
+      searchResultsEl &&
+      searchResultsEl.current &&
+      searchResultsEl.current.children[0]
+    ) {
       console.log(searchResultsEl.current.children[0]);
       targetEl = searchResultsEl.current.children[0];
       targetEl.style = "background-color: #4e4742; border-radius: 0.25rem";
