@@ -2,6 +2,8 @@
 .main-content {
   color: v.$text-color;
   display: flex;
+  // The purpose of this min-height is to prevent the footer from jumping up on load
+  min-height: 613px;
 
   .actor-profile {
     margin: 0 3rem;

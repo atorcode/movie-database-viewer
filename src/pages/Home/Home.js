@@ -30,10 +30,12 @@ const Home = () => {
   return (
     <main className={styles["main-content"]}>
       <section>
-        <MovieCards
-          moviesToDisplay={displayedMovies}
-          header={"Trending Movies"}
-        />
+        <div className={styles["movie-cards-container"]}>
+          <MovieCards
+            moviesToDisplay={displayedMovies}
+            header={"Trending Movies"}
+          />
+        </div>
         <LoadButton {...propsToPass} />
       </section>
     </main>
