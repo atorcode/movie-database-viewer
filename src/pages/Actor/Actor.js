@@ -51,14 +51,10 @@ const Actor = () => {
   return (
     <main className={styles["main-content"]}>
       <section className={styles["actor-profile"]}>
-        <img
-          src={
-            image
-              ? `https://image.tmdb.org/t/p/w300${image}`
-              : defaultProfilePicture
-          }
-          alt={name}
-        />
+        {name && !image && <img src={defaultProfilePicture} alt={name} />}
+        {image && (
+          <img src={`https://image.tmdb.org/t/p/w300${image}`} alt={name} />
+        )}
         <ActorInfo {...propsToPass} />
       </section>
       <section className={styles["movie-cards-container"]}>

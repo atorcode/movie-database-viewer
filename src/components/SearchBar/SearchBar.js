@@ -11,6 +11,8 @@ const SearchBar = (props) => {
 
   const { movieToSearch, setMovieToSearch, setStartFetch } = props;
 
+  console.log(props.data);
+
   const handleSearch = (event) => {
     setMovieToSearch(event.target.value);
     if (event.target.value.length === 0) {
@@ -90,7 +92,12 @@ SearchBar.propTypes = {
   movieToSearch: PropTypes.string.isRequired,
   setMovieToSearch: PropTypes.func.isRequired,
   setStartFetch: PropTypes.func.isRequired,
-  data: PropTypes.object,
+  data: PropTypes.shape({
+    page: PropTypes.number,
+    results: PropTypes.array,
+    total_pages: PropTypes.number,
+    total_results: PropTypes.number,
+  }),
 };
 
 export default SearchBar;
