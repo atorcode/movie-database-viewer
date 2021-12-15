@@ -1,9 +1,12 @@
-import { useEffect, forwardRef } from "react";
+import { useState, useEffect, forwardRef } from "react";
 import styles from "./SearchResults.module.scss";
 import SearchResult from "../SearchResult";
 
 const SearchResults = forwardRef(({ data }, searchResultsEl) => {
+  const [aResultIsHovered, setAResultIsHovered] = useState(false);
   let results;
+
+  console.log(aResultIsHovered);
 
   if (data) {
     ({ results } = data);
@@ -15,9 +18,9 @@ const SearchResults = forwardRef(({ data }, searchResultsEl) => {
     if (
       searchResultsEl &&
       searchResultsEl.current &&
-      searchResultsEl.current.children[0]
+      searchResultsEl.current.children[0] &&
+      !aResultIsHovered
     ) {
-      console.log(searchResultsEl.current.children[0]);
       targetEl = searchResultsEl.current.children[0];
       targetEl.style = "background-color: #4e4742; border-radius: 0.25rem";
     }
@@ -33,7 +36,13 @@ const SearchResults = forwardRef(({ data }, searchResultsEl) => {
       {results && (
         <ul ref={searchResultsEl} className={styles["search-results"]}>
           {results.map((result) => {
-            return <SearchResult key={result.id} {...result} />;
+            return (
+              <SearchResult
+                key={result.id}
+                {...result}
+                setAResultIsHovered={setAResultIsHovered}
+              />
+            );
           })}
         </ul>
       )}

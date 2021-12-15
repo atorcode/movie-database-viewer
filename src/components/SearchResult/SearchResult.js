@@ -7,6 +7,7 @@ const SearchResult = ({
   title,
   release_date: release,
   poster_path: image,
+  setAResultIsHovered,
 }) => {
   return (
     <li className={styles["search-result"]}>
@@ -16,6 +17,12 @@ const SearchResult = ({
           tabIndex={-1}
           onMouseDown={(e) => {
             e.preventDefault();
+          }}
+          onMouseEnter={() => {
+            setAResultIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setAResultIsHovered(false);
           }}
           onClick={() => {
             document.activeElement.blur();

@@ -46,7 +46,6 @@ const SearchBar = (props) => {
           className={styles["search-form"]}
           onSubmit={(e) => {
             e.preventDefault();
-            // make this less ugly
             if (
               searchResultsEl &&
               searchResultsEl.current &&
