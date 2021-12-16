@@ -8,6 +8,7 @@ import Home from "./pages/Home/";
 import SelectedMovie from "./pages/SelectedMovie";
 import Actor from "./pages/Actor";
 import Error from "./pages/Error";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             }
           />
           <Route path="/actor/:actorId" element={<Actor />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/*" element={<Error />} />
         </Routes>
         <Footer />

@@ -29,6 +29,9 @@ const Navbar = () => {
         <h2 className={styles["site-name-acronym"]}>MDbV</h2>
       </Link>
       <SearchBar {...propsToPass} />
+      <Link to="/favorites" className={styles["favorites-link"]}>
+        <h2 className={styles["favorites"]}>Favorites</h2>
+      </Link>
     </nav>
   );
 };

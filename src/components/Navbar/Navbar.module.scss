@@ -17,13 +17,18 @@
   margin: 0 auto 0 1rem;
 }
 
-.site-name {
+.site-name,
+.favorites {
   color: v.$secondary-color;
 }
 
 .site-name-acronym {
   color: v.$secondary-color;
   display: none;
+}
+
+.favorites-link {
+  margin: 0 1rem 0 auto;
 }
 
 @media (max-width: 1147px) {

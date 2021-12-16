@@ -1,6 +1,7 @@
 @use "../../variables" as v;
 
 .movie-card {
+  position: relative;
   background-color: v.$primary-color-light-alt;
   color: v.$secondary-color;
   width: 100%;
@@ -24,9 +25,33 @@
     transition: all 0.25s ease-in-out;
   }
 
+  .favorite-icon {
+    display: none;
+    position: absolute;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+    right: 6px;
+    top: 6px;
+    transform: scale(150%);
+    transform-origin: top right;
+    overflow: visible;
+
+    &:hover {
+      svg {
+      }
+      path {
+        fill: v.$secondary-color;
+      }
+    }
+  }
+
   &:hover,
   &:focus {
     outline: 2px solid v.$tertiary-color;
+  }
+
+  &:hover .favorite-icon,
+  &:focus .favorite-icon {
+    display: block;
   }
 
   &:hover img,
