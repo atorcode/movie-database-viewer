@@ -26,3 +26,11 @@
     flex-grow: 1;
   }
 }
+
+@media (max-width: 716px) {
+  .actor-profile {
+    & > * {
+      width: 200px !important;
+    }
+  }
+}

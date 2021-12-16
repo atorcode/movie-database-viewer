@@ -62,6 +62,7 @@ const MovieDetails = () => {
 
   return (
     <section className={styles["movie-details"]}>
+      <h2>Movie Details</h2>
       {/* Score and release dates will be rendered regardless of values */}
       <h4>TMDB User Score</h4>
       <p>

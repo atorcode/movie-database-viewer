@@ -9,3 +9,9 @@
   gap: 0.25rem;
   justify-content: center;
 }
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column-reverse;
+  }
+}
