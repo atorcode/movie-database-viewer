@@ -35,12 +35,8 @@
     transform-origin: top right;
     overflow: visible;
 
-    &:hover {
-      svg {
-      }
-      path {
-        fill: v.$secondary-color;
-      }
+    path:hover {
+      fill: v.$secondary-color;
     }
   }
 
