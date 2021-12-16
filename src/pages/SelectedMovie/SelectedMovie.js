@@ -14,8 +14,8 @@ const SelectedMovie = () => {
     <main className={styles["main"]}>
       <MovieHero />
       <div className={styles["flex-container"]}>
-        <Cast />
         <MovieDetails />
+        <Cast />
       </div>
     </main>
   );
