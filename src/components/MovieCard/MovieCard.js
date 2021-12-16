@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./MovieCard.module.scss";
 import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
@@ -7,17 +7,7 @@ import defaultImage from "../../images/no-image-found.png";
 // import FavoritesNotification from "../FavoritesNotification";
 
 const MovieCard = (props) => {
-  // doesn't persist between pages
-  const [isFavorited, setIsFavorited] = useState(false);
-
-  console.log(isFavorited);
-
-  const toggleFill = (element) => {
-    isFavorited
-      ? (element.style.fill = "transparent")
-      : (element.style.fill = "rgb(255, 25, 25)");
-  };
-
+  const pathEl = useRef(null);
   const {
     id,
     title,
@@ -25,6 +15,26 @@ const MovieCard = (props) => {
     poster_path: image,
     vote_average: score,
   } = props;
+
+  useEffect(() => {
+    if (localStorage.getItem(id)) {
+      pathEl.current.style.fill = "rgb(255, 25, 25)";
+    }
+  }, []);
+
+  const handleStorage = () => {
+    if (!localStorage.getItem(id)) {
+      localStorage.setItem(id, true);
+    } else {
+      localStorage.removeItem(id);
+    }
+  };
+
+  const toggleFill = (element) => {
+    localStorage.getItem(id)
+      ? (element.style.fill = "rgb(255, 25, 25)")
+      : (element.style.fill = "transparent");
+  };
 
   return (
     <Link to={`/movie/${id}`} className={styles["movie-card"]}>
@@ -46,10 +56,11 @@ const MovieCard = (props) => {
         >
           <path
             d="M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z"
+            ref={pathEl}
             onClick={(e) => {
               // stop click from registering on the movie card
               e.preventDefault();
-              setIsFavorited(!isFavorited);
+              handleStorage();
               toggleFill(e.target);
             }}
           />
