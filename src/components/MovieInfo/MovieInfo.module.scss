@@ -9,6 +9,7 @@
   width: 40%;
   padding-left: 3rem;
   font-weight: 500;
+  text-shadow: 1px 1px 2px black;
   h1 {
     color: v.$secondary-color;
     font-size: 3rem;
@@ -30,5 +31,23 @@
     color: v.$tertiary-color;
     margin-left: 4px;
     margin-right: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-info {
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+    h1 {
+      font-size: 2rem;
+    }
+    h2,
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
   }
 }

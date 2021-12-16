@@ -26,6 +26,7 @@ const Navbar = () => {
     <nav className={styles["navigation-bar"]}>
       <Link to="/" className={styles["site-name-link"]}>
         <h2 className={styles["site-name"]}>Movie Database Viewer</h2>
+        <h2 className={styles["site-name-acronym"]}>MDbV</h2>
       </Link>
       <SearchBar {...propsToPass} />
     </nav>

@@ -6,3 +6,9 @@
   position: relative;
   background-color: #000000;
 }
+
+@media (max-width: 600px) {
+  .movie-hero {
+    height: 300px;
+  }
+}

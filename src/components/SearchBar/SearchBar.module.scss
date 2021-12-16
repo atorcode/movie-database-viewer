@@ -37,6 +37,7 @@
     border-radius: 0 1rem 1rem 0;
     font-size: 1rem;
   }
+
   &:focus-within {
     border: 2px solid v.$tertiary-color;
   }
@@ -44,4 +45,10 @@
 
 .search-bar-container-flattened {
   border-radius: 0.25rem;
+}
+
+@media (max-width: 460px) {
+  .search-bar {
+    font-size: 0.75rem !important;
+  }
 }

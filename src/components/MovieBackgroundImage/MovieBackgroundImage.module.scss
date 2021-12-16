@@ -20,3 +20,10 @@
     object-fit: cover;
   }
 }
+
+@media (max-width: 600px) {
+  .image-container {
+    img {
+    }
+  }
+}

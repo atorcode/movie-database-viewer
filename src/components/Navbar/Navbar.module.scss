@@ -20,3 +20,17 @@
 .site-name {
   color: v.$secondary-color;
 }
+
+.site-name-acronym {
+  color: v.$secondary-color;
+  display: none;
+}
+
+@media (max-width: 788px) {
+  .site-name {
+    display: none;
+  }
+  .site-name-acronym {
+    display: block;
+  }
+}
