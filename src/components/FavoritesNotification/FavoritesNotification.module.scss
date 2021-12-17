@@ -1,5 +1,10 @@
 .favorites-notification {
-  position: absolute;
-  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: pink;
+  width: 14rem;
   height: 5rem;
+  border-radius: 0.25rem;
 }

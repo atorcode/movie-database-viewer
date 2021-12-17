@@ -7,7 +7,7 @@ import defaultImage from "../../images/no-image-found.png";
 import { useNotificationContext } from "../../contexts/NotificationContext";
 
 const MovieCard = (props) => {
-  const { setShowNotification } = useNotificationContext();
+  const { notifications, setNotifications } = useNotificationContext();
 
   const pathEl = useRef(null);
   const {
@@ -63,7 +63,7 @@ const MovieCard = (props) => {
               e.preventDefault();
               handleStorage();
               toggleFill(e.target);
-              setShowNotification(true);
+              setNotifications([...notifications, title]);
             }}
           />
         </svg>
