@@ -7,7 +7,6 @@ const FavoritesNotifications = () => {
   return (
     <aside className={styles["notifications"]}>
       {notifications.map((notification) => {
-        console.log(notification);
         return <FavoritesNotification {...notification} />;
       })}
     </aside>
