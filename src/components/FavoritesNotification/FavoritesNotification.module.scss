@@ -1,10 +1,16 @@
 .favorites-notification {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 1rem;
   background-color: pink;
-  width: 14rem;
-  height: 5rem;
+  width: 18rem;
+  min-height: 5rem;
+  margin-bottom: 0.5rem;
   border-radius: 0.25rem;
+
+  .add-remove-message {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+  }
 }

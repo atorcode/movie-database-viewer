@@ -61,9 +61,17 @@ const MovieCard = (props) => {
             onClick={(e) => {
               // stop click from registering on the movie card
               e.preventDefault();
+
+              if (localStorage.getItem(id)) {
+                setNotifications([
+                  ...notifications,
+                  { title, action: "remove" },
+                ]);
+              } else {
+                setNotifications([...notifications, { title, action: "add" }]);
+              }
               handleStorage();
               toggleFill(e.target);
-              setNotifications([...notifications, title]);
             }}
           />
         </svg>

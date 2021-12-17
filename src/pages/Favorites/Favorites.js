@@ -2,7 +2,7 @@ import styles from "./Favorites.module.scss";
 import MovieCards from "../../components/MovieCards";
 
 const Favorites = () => {
-  const favoriteMovies = [];
+  const notifications = [];
 
   return (
     <main className={styles["main-content"]}>
