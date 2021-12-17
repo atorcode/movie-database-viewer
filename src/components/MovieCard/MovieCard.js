@@ -4,9 +4,11 @@ import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import defaultImage from "../../images/no-image-found.png";
-// import FavoritesNotification from "../FavoritesNotification";
+import { useNotificationContext } from "../../contexts/NotificationContext";
 
 const MovieCard = (props) => {
+  const { setShowNotification } = useNotificationContext();
+
   const pathEl = useRef(null);
   const {
     id,
@@ -20,7 +22,7 @@ const MovieCard = (props) => {
     if (localStorage.getItem(id)) {
       pathEl.current.style.fill = "rgb(255, 25, 25)";
     }
-  }, []);
+  }, [id]);
 
   const handleStorage = () => {
     if (!localStorage.getItem(id)) {
@@ -43,7 +45,6 @@ const MovieCard = (props) => {
           src={image ? `https://image.tmdb.org/t/p/w500${image}` : defaultImage}
           alt={title}
         />
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -62,6 +63,7 @@ const MovieCard = (props) => {
               e.preventDefault();
               handleStorage();
               toggleFill(e.target);
+              setShowNotification(true);
             }}
           />
         </svg>

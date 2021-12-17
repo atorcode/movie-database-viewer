@@ -11,8 +11,6 @@ const SearchBar = (props) => {
 
   const { movieToSearch, setMovieToSearch, setStartFetch } = props;
 
-  console.log(props.data);
-
   const handleSearch = (event) => {
     setMovieToSearch(event.target.value);
     if (event.target.value.length === 0) {

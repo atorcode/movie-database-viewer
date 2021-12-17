@@ -9,8 +9,12 @@ import SelectedMovie from "./pages/SelectedMovie";
 import Actor from "./pages/Actor";
 import Error from "./pages/Error";
 import Favorites from "./pages/Favorites";
+import FavoritesNotification from "./components/FavoritesNotification";
+import { useNotificationContext } from "./contexts/NotificationContext";
 
 function App() {
+  const { showNotification } = useNotificationContext();
+
   return (
     <>
       <Router>
@@ -31,6 +35,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      {showNotification && <FavoritesNotification />}
     </>
   );
 }
