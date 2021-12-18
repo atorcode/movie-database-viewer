@@ -1,12 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./FavoritesNotification.module.scss";
 import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
 import { useNotificationContext } from "../../contexts/NotificationContext";
 
 const FavoritesNotification = ({ title, action, id }) => {
   const { setNotifications } = useNotificationContext();
+  const notificationEl = useRef(null);
 
   useEffect(() => {
+    const height = notificationEl.current.getBoundingClientRect().height;
+    const amountToMove = `-${height + 8}px`;
+
+    // life saver
+    notificationEl.current.style.setProperty("--marginTop", `${amountToMove}`);
+
     setTimeout(() => {
       setNotifications((notifications) =>
         notifications.filter((notification) => notification.id !== id)
@@ -15,7 +22,7 @@ const FavoritesNotification = ({ title, action, id }) => {
   }, []);
 
   return (
-    <div className={styles["favorites-notification"]}>
+    <div ref={notificationEl} className={styles["favorites-notification"]}>
       {action === "add" ? (
         <>
           <FiPlusCircle className={styles["icon"]} />

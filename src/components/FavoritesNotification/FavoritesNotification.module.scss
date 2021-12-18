@@ -15,7 +15,8 @@
   border-radius: 0.25rem;
   transform: translateX(200%);
   opacity: 0;
-  animation: slideIn 0.375s ease-out forwards, slideOut 0.375s ease-out 2.625s;
+  animation: slideIn 0.375s ease-out forwards,
+    slideOut 0.375s ease-out 2.625s forwards;
 
   .icon {
     color: v.$secondary-color;
@@ -48,13 +49,7 @@
 
 @keyframes slideOut {
   100% {
-    // transform: translateY(-100%);
-    margin-top: -70px;
-    margin-bottom: 0;
+    margin-top: var(--marginTop);
     opacity: 0;
-    // height: 0;
-    // padding-top: 0;
-    // padding-bottom: 0;
-    // margin-bottom: 0;
   }
 }
