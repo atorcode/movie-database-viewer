@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import defaultImage from "../../images/no-image-found.png";
 import { useNotificationContext } from "../../contexts/NotificationContext";
+import { v4 as uuidv4 } from "uuid";
 
 const MovieCard = (props) => {
   const { notifications, setNotifications } = useNotificationContext();
@@ -61,14 +62,17 @@ const MovieCard = (props) => {
             onClick={(e) => {
               // stop click from registering on the movie card
               e.preventDefault();
-
+              const uuid = uuidv4();
               if (localStorage.getItem(id)) {
                 setNotifications([
                   ...notifications,
-                  { title, action: "remove" },
+                  { title, action: "remove", id: uuid },
                 ]);
               } else {
-                setNotifications([...notifications, { title, action: "add" }]);
+                setNotifications([
+                  ...notifications,
+                  { title, action: "add", id: uuid },
+                ]);
               }
               handleStorage();
               toggleFill(e.target);
