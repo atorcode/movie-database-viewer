@@ -1,17 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 const NotificationContext = React.createContext();
 
 const NotificationProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
-
-  // if (notifications) {
-  //   setTimeout(() => {
-  //     setNotifications(notifications.slice(1));
-  //   }, 3000);
-  // }
-
-  console.log(notifications);
 
   return (
     <NotificationContext.Provider value={{ notifications, setNotifications }}>
