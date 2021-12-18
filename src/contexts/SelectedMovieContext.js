@@ -55,8 +55,6 @@ const SelectedMovieProvider = ({ children }) => {
       return crewMember.job.toLowerCase() === "screenplay";
     });
 
-    console.log(data);
-
     // Find the first release date that has a certified rating. If no release has a certified rating, return "NR".
     let USreleases = data.release_dates.results.find((result) => {
       return result.iso_3166_1 === "US";

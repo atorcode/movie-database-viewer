@@ -6,8 +6,6 @@ const SearchResults = forwardRef(({ data }, searchResultsEl) => {
   const [aResultIsHovered, setAResultIsHovered] = useState(false);
   let results;
 
-  console.log(aResultIsHovered);
-
   if (data) {
     ({ results } = data);
   }

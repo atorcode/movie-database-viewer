@@ -11,8 +11,9 @@ const FavoritesNotification = ({ title, action, id }) => {
       setNotifications((notifications) =>
         notifications.filter((notification) => notification.id !== id)
       );
-    }, 3000);
+    }, 300000);
   }, []);
+
   return (
     <div className={styles["favorites-notification"]}>
       {action === "add" ? (

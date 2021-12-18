@@ -6,10 +6,16 @@
   justify-content: flex-start;
   gap: 1rem;
   padding: 0.75rem 0.5rem;
+  overflow: hidden;
+  // margin-bottom: 0.5rem;
   background-color: v.$notification-color;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   width: 20rem;
   border-radius: 0.25rem;
+  transform: translateX(200%);
+  opacity: 0;
+  animation: slideIn 0.375s ease-out forwards;
+  // slideOut 0.375s ease-out 2.625s forwards;
 
   .icon {
     color: v.$secondary-color;
@@ -30,5 +36,19 @@
   .add-remove-message {
     margin-top: 0.25rem;
     font-size: 0.9rem;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
