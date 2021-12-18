@@ -7,15 +7,15 @@
   gap: 1rem;
   padding: 0.75rem 0.5rem;
   overflow: hidden;
-  // margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
   background-color: v.$notification-color;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   width: 20rem;
   border-radius: 0.25rem;
   transform: translateX(200%);
   opacity: 0;
-  animation: slideIn 0.375s ease-out forwards;
-  // slideOut 0.375s ease-out 2.625s forwards;
+  animation: slideIn 0.375s ease-out forwards, slideOut 0.375s ease-out 2.625s;
 
   .icon {
     color: v.$secondary-color;
@@ -48,7 +48,13 @@
 
 @keyframes slideOut {
   100% {
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
+    margin-top: -70px;
+    margin-bottom: 0;
     opacity: 0;
+    // height: 0;
+    // padding-top: 0;
+    // padding-bottom: 0;
+    // margin-bottom: 0;
   }
 }

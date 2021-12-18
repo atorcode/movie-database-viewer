@@ -11,7 +11,7 @@ const FavoritesNotification = ({ title, action, id }) => {
       setNotifications((notifications) =>
         notifications.filter((notification) => notification.id !== id)
       );
-    }, 300000);
+    }, 3000);
   }, []);
 
   return (
