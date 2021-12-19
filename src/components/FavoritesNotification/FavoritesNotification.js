@@ -19,6 +19,7 @@ const FavoritesNotification = ({ title, action, id }) => {
         notifications.filter((notification) => notification.id !== id)
       );
     }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

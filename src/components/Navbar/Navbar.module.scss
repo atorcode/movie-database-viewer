@@ -61,3 +61,23 @@
     display: block;
   }
 }
+
+@media (max-width: 476px) {
+  .navigation-bar {
+    padding-bottom: 0.5rem;
+    grid-template-areas:
+      "home . . favorites"
+      "search search search search";
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .site-name-link {
+    grid-area: home;
+  }
+
+  .favorites-link {
+    grid-area: favorites;
+  }
+
+  // search grid-area can be found in SearchBar.module.scss
+}
