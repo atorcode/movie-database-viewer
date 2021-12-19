@@ -37,8 +37,12 @@ const SearchResult = ({
             alt={title}
             className={styles["image"]}
           />
-          {title}{" "}
-          {release ? `(${release.substring(0, 4)})` : "(Unknown Release Date)"}
+          <p>
+            {title.length <= 60 ? title : `${title.substring(0, 60).trim()}...`}{" "}
+            {release
+              ? `(${release.substring(0, 4)})`
+              : "(Unknown Release Date)"}
+          </p>
         </Link>
       </div>
     </li>

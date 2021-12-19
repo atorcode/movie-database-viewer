@@ -31,11 +31,33 @@
   margin: 0 1rem 0 auto;
 }
 
+.favorite-icon {
+  display: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+
+  svg {
+    overflow: visible;
+    vertical-align: middle;
+    margin-left: 1px;
+  }
+}
+
 @media (max-width: 1147px) {
   .site-name {
     display: none;
   }
   .site-name-acronym {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .favorites {
+    display: none;
+  }
+  .favorite-icon {
     display: block;
   }
 }
