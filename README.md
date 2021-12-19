@@ -4,6 +4,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <img src="./src/images/movie-database-viewer-capture.gif" alt="Application Demo GIF" width="800" height="auto"/>
 
+## Overview
+
+Movie Database Viewer (MDbV) is a React Single-page Application for browsing movies.
+
+Features include:
+
+- Near real-time updates for all movie information
+
+- Detailed movie descriptions including overviews, taglines, MPAA ratings, release dates, runtimes, budget and revenue, spoken languages, production companies, cast and crew information, and user scores.
+
+- Ability to search for hundreds of thousands of movies
+
+- Up-to-date view of trending movies
+
+- Actor biographies and filmographies
+
+- Movie favoriting system
+
+- Responsive layout for all screen sizes
+
+This project was designed and developed by Alberto Torrigiotti
+
 ## Technologies Used
 
 ### React
@@ -33,6 +55,10 @@ Superset of CSS and newer syntax of the Sass preprocessor. Features include sele
 ### SCSS Modules
 
 Files achieving locally scoped class selectors by compiling them into globally unique names.
+
+### Web Storage API
+
+API providing mechanisms for storing key/value pairs that persist for the duration of a session or across sessions
 
 ## License
 
