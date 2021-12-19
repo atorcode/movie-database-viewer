@@ -37,20 +37,14 @@
   }
 }
 
-// @media (max-width: 1146px) {
-//   .search-results-panel {
-//     padding-top: 2.75rem;
-//   }
-// }
+@media (max-height: 660px) {
+  .search-results-panel .search-results {
+    max-height: 480px;
+  }
+}
 
-// @media (max-width: 810px) {
-//   .search-results-panel {
-//     padding-top: 4.1rem;
-//   }
-// }
-
-// @media (max-width: 700px) {
-//   .search-results-panel {
-//     width: 90vw;
-//   }
-// }
+@media (max-height: 542px) {
+  .search-results-panel .search-results {
+    max-height: 360px;
+  }
+}
