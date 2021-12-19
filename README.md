@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
-<img src="./src/images/movie-database-viewer-capture.gif" alt="Application Demo GIF" width="800" height="auto"/>
+<img src="./src/images/application-capture.gif" alt="Application Demo GIF" width="800" height="auto"/>
 
 ## Overview
 
