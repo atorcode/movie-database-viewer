@@ -38,7 +38,7 @@ Special JavaScript functions that enable the use of state, lifecycle methods, an
 
 ### React Router
 
-Client-side routing that enables the Single Page Application pattern
+Client-side routing that enables the Single-page Application pattern
 
 ### PropTypes
 

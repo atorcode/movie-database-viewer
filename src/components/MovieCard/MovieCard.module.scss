@@ -11,6 +11,10 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
 
+  // Fix flickering of text on other cards when a filter is applied to a card's image
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
   article {
     display: flex;
     flex-direction: column;
@@ -59,6 +63,9 @@
 .title {
   padding: 0.25rem 0.5rem 0 0.5rem;
   font-size: 1.1rem;
+  // 700 font-weight isn't bold enough but 800 is too bold, so text-shadow is used here
+  // to achieve an in-between result
+  text-shadow: 1px 0 v.$secondary-color;
 }
 
 .release-year-and-score {
