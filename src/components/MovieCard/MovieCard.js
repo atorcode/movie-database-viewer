@@ -27,7 +27,7 @@ const MovieCard = (props) => {
 
   const handleStorage = () => {
     if (!localStorage.getItem(id)) {
-      localStorage.setItem(id, true);
+      localStorage.setItem(id, JSON.stringify(props));
     } else {
       localStorage.removeItem(id);
     }
