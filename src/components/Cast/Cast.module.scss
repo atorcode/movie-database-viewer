@@ -1,3 +1,4 @@
+@use "../../variables" as v;
 .cast-section {
   padding-bottom: 2rem;
 
@@ -17,7 +18,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: v.$movie-page-small) {
   .cast-section .cast-container {
     max-width: 100%;
   }

@@ -62,7 +62,7 @@
   }
 }
 
-@media (max-width: 476px) {
+@media (max-width: v.$navbar-mobile) {
   .navigation-bar {
     padding-bottom: 0.5rem;
     grid-template-areas:

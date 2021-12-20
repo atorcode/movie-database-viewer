@@ -49,7 +49,7 @@
   border-radius: 0.25rem;
 }
 
-@media (max-width: 476px) {
+@media (max-width: v.$navbar-mobile) {
   .search-and-results {
     grid-area: search;
   }
