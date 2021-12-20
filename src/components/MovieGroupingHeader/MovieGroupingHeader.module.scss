@@ -1,0 +1,9 @@
+@use "../../variables" as v;
+
+.header {
+  color: v.$secondary-color;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}

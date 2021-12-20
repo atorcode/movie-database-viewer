@@ -1,5 +1,14 @@
-.main-content {
-}
+@use "../../variables" as v;
+
 .favorite-movies {
   min-height: 600px;
+  position: relative;
+
+  .no-favorites {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: pink;
+  }
 }

@@ -4,6 +4,7 @@ import styles from "./Actor.module.scss";
 import fetcher from "../../helpers/fetcher";
 import useSWR from "swr";
 import ActorInfo from "../../components/ActorInfo";
+import MovieGroupingHeader from "../../components/MovieGroupingHeader";
 import MovieCards from "../../components/MovieCards";
 import defaultProfilePicture from "../../images/default-profile-picture.png";
 
@@ -57,7 +58,8 @@ const Actor = () => {
         )}
         <ActorInfo {...propsToPass} />
       </section>
-      <section className={styles["movie-cards-container"]}>
+      <section className={styles["movie-header-and-cards"]}>
+        <MovieGroupingHeader header={"Filmography"} />
         <MovieCards moviesToDisplay={moviesAsActor} header={"Filmography"} />
       </section>
     </main>

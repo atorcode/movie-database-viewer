@@ -1,13 +1,13 @@
 import styles from "./MovieCards.module.scss";
 import PropTypes from "prop-types";
 import MovieCard from "../MovieCard";
+import MovieGroupingHeader from "../MovieGroupingHeader";
 
-const MovieCards = ({ moviesToDisplay, header }) => {
+const MovieCards = ({ moviesToDisplay }) => {
   return (
     <>
       {moviesToDisplay && (
         <>
-          <h1 className={styles["header"]}>{header}</h1>
           <div className={styles["movies-container"]}>
             {moviesToDisplay.map((movie) => {
               return <MovieCard key={movie.id} {...movie} />;
@@ -21,7 +21,6 @@ const MovieCards = ({ moviesToDisplay, header }) => {
 
 MovieCards.propTypes = {
   moviesToDisplay: PropTypes.array,
-  header: PropTypes.string.isRequired,
 };
 
 export default MovieCards;
