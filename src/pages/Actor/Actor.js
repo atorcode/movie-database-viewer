@@ -60,7 +60,13 @@ const Actor = () => {
       </section>
       <section className={styles["movie-header-and-cards"]}>
         <MovieGroupingHeader header={"Filmography"} />
-        <MovieCards moviesToDisplay={moviesAsActor} header={"Filmography"} />
+        <MovieCards
+          moviesToDisplay={moviesAsActor}
+          styleInfo={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, max-content))",
+            justifyContent: "start",
+          }}
+        />
       </section>
     </main>
   );

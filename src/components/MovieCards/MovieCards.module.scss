@@ -6,6 +6,7 @@
   padding-bottom: 3.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  justify-content: center;
   gap: 1.5rem;
 }
 

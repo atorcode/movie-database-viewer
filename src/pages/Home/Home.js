@@ -33,10 +33,7 @@ const Home = () => {
       <section>
         <MovieGroupingHeader header="Trending Movies" />
         <div className={styles["movie-cards-container"]}>
-          <MovieCards
-            moviesToDisplay={displayedMovies}
-            header={"Trending Movies"}
-          />
+          <MovieCards moviesToDisplay={displayedMovies} />
         </div>
         <LoadButton {...propsToPass} />
       </section>

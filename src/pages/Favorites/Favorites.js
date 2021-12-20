@@ -19,7 +19,13 @@ const Favorites = () => {
           </h3>
         )}
         <MovieGroupingHeader header={"Favorite Movies"} />
-        <MovieCards moviesToDisplay={favorites} header="Favorite Movies" />
+        <MovieCards
+          moviesToDisplay={favorites}
+          styleInfo={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, max-content))",
+            justifyContent: "start",
+          }}
+        />
       </section>
     </main>
   );
