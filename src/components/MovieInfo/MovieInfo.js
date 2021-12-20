@@ -11,11 +11,17 @@ const MovieInfo = () => {
     <div className={styles["movie-info"]}>
       <h1>{title}</h1>
       {tagline && <h2>{tagline}</h2>}
-      <p>
-        {release ? release.substring(0, 4) : "Unknown Release Date"} &#183;{" "}
-        {rating} &#183; {formatMinutes(runtime)} &#183;{" "}
-        <FaStar className={styles["star-icon"]} />
-        {score}
+      <p className={styles["key-info"]}>
+        <span>
+          {release ? release.substring(0, 4) : "Unknown Release Date"}
+        </span>
+        <span> &#183; {rating}</span>
+        <span> &#183; {formatMinutes(runtime)}</span>
+        <span>
+          {" "}
+          &#183; <FaStar className={styles["star-icon"]} />
+          {score}
+        </span>
       </p>
 
       <h3>Overview</h3>
