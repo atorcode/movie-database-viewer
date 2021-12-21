@@ -38,7 +38,22 @@ const MovieCards = ({ moviesToDisplay, styleInfo }) => {
             style={styleInfo}
           >
             {moviesToDisplay.map((movie) => {
-              return <MovieCard key={movie.id} {...movie} />;
+              const { id, title } = movie;
+
+              // The name of these props may vary depending on if they come directly from the JSON or if they've already been formatted by SelectedMovieContext
+              const release = movie.release || movie.release_date;
+              const poster = movie.poster || movie.poster_path;
+              const score = movie.score ?? movie.vote_average;
+              return (
+                <MovieCard
+                  key={movie.id}
+                  id={id}
+                  title={title}
+                  release={release}
+                  poster={poster}
+                  score={score}
+                />
+              );
             })}
           </div>
         </>

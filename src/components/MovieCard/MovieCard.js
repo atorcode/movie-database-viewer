@@ -11,13 +11,7 @@ const MovieCard = (props) => {
   const { notifications, setNotifications } = useNotificationContext();
 
   const pathEl = useRef(null);
-  const {
-    id,
-    title,
-    release_date: release,
-    poster_path: image,
-    vote_average: score,
-  } = props;
+  const { id, title, release, poster, score } = props;
 
   useEffect(() => {
     if (localStorage.getItem(id)) {
@@ -36,7 +30,9 @@ const MovieCard = (props) => {
     <Link to={`/movie/${id}`} className={styles["movie-card"]} state={props}>
       <article>
         <img
-          src={image ? `https://image.tmdb.org/t/p/w500${image}` : defaultImage}
+          src={
+            poster ? `https://image.tmdb.org/t/p/w500${poster}` : defaultImage
+          }
           alt={title}
         />
         <svg
@@ -57,7 +53,11 @@ const MovieCard = (props) => {
             onClick={(e) => {
               // stop click from registering on the movie card
               e.preventDefault();
-              handleStorage(props, notifications, setNotifications);
+              handleStorage(
+                { id, title, release, poster, score },
+                notifications,
+                setNotifications
+              );
               toggleFill(e.target);
             }}
           />
@@ -81,12 +81,18 @@ const MovieCard = (props) => {
   );
 };
 
+const oneOrTheOther = (props, first, second) => {
+  if (!props.hasOwnProperty(first) && !props.hasOwnProperty(second)) {
+    return new Error("neither");
+  }
+};
+
 MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
-  release_date: PropTypes.string,
   title: PropTypes.string.isRequired,
-  poster_path: PropTypes.string,
-  vote_average: PropTypes.number.isRequired,
+  release: PropTypes.string,
+  poster: PropTypes.string,
+  score: PropTypes.number.isRequired,
 };
 
 export default MovieCard;
