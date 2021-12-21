@@ -81,12 +81,6 @@ const MovieCard = (props) => {
   );
 };
 
-const oneOrTheOther = (props, first, second) => {
-  if (!props.hasOwnProperty(first) && !props.hasOwnProperty(second)) {
-    return new Error("neither");
-  }
-};
-
 MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
