@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import defaultImage from "../../images/no-image-found.png";
 import { useNotificationContext } from "../../contexts/NotificationContext";
-import { v4 as uuidv4 } from "uuid";
+import { handleStorage } from "../../helpers/helpers";
 
 const MovieCard = (props) => {
   const { notifications, setNotifications } = useNotificationContext();
@@ -25,14 +25,6 @@ const MovieCard = (props) => {
     }
   }, [id]);
 
-  const handleStorage = () => {
-    if (!localStorage.getItem(id)) {
-      localStorage.setItem(id, JSON.stringify(props));
-    } else {
-      localStorage.removeItem(id);
-    }
-  };
-
   const toggleFill = (element) => {
     localStorage.getItem(id)
       ? (element.style.fill = "rgb(255, 25, 25)")
@@ -40,7 +32,8 @@ const MovieCard = (props) => {
   };
 
   return (
-    <Link to={`/movie/${id}`} className={styles["movie-card"]}>
+    // the state below is used to pass the MovieCard info to the favorites button in the MovieHero. The favorites button stores this info, and the favorites page uses this info to construct the MovieCard
+    <Link to={`/movie/${id}`} className={styles["movie-card"]} state={props}>
       <article>
         <img
           src={image ? `https://image.tmdb.org/t/p/w500${image}` : defaultImage}
@@ -64,19 +57,7 @@ const MovieCard = (props) => {
             onClick={(e) => {
               // stop click from registering on the movie card
               e.preventDefault();
-              const uuid = uuidv4();
-              if (localStorage.getItem(id)) {
-                setNotifications([
-                  ...notifications,
-                  { title, action: "remove", id: uuid },
-                ]);
-              } else {
-                setNotifications([
-                  ...notifications,
-                  { title, action: "add", id: uuid },
-                ]);
-              }
-              handleStorage();
+              handleStorage(props, notifications, setNotifications);
               toggleFill(e.target);
             }}
           />

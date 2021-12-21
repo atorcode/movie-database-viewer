@@ -13,7 +13,8 @@ const SelectedMovieProvider = ({ children }) => {
     fetcher
   );
 
-  let title,
+  let id,
+    title,
     image,
     score,
     scoreVotes,
@@ -32,6 +33,7 @@ const SelectedMovieProvider = ({ children }) => {
     genreInfo;
   if (data) {
     ({
+      id,
       title,
       backdrop_path: image,
       release_date: release,
@@ -76,6 +78,7 @@ const SelectedMovieProvider = ({ children }) => {
   return (
     <SelectedMovieContext.Provider
       value={{
+        id,
         title,
         release,
         image,

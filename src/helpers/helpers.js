@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const formatMinutes = (totalMinutes) => {
   if (typeof totalMinutes !== "number") {
     return;
@@ -59,4 +61,17 @@ const singularOrPlural = (singularForm, arr) => {
   }
 };
 
-export { formatMinutes, formatDate, singularOrPlural };
+// local storage for favorited movies
+const handleStorage = (props, notifications, setNotifications) => {
+  const { id, title } = props;
+  const uuid = uuidv4();
+  if (!localStorage.getItem(id)) {
+    localStorage.setItem(id, JSON.stringify(props));
+    setNotifications([...notifications, { title, action: "add", id: uuid }]);
+  } else {
+    localStorage.removeItem(id);
+    setNotifications([...notifications, { title, action: "remove", id: uuid }]);
+  }
+};
+
+export { formatMinutes, formatDate, singularOrPlural, handleStorage };
