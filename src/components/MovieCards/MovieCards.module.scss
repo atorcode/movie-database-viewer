@@ -15,10 +15,3 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
-
-// Force MovieCards to be horizontally centered when one-column layout kicks in
-@media (max-width: 540px) {
-  .movies-container {
-    justify-content: center !important;
-  }
-}
