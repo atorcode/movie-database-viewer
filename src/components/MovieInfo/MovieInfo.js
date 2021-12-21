@@ -9,7 +9,22 @@ const MovieInfo = () => {
 
   return (
     <div className={styles["movie-info"]}>
-      <h1>{title}</h1>
+      {/* {title && title.length < 40 ? (
+        <h1 className={styles["header"]}>{title}</h1>
+      ) : (
+        <h1 className={styles["header-small"]}>{title}</h1>
+      )} */}
+      {title && title.length < 40 && (
+        <h1 className={styles["header"]}>{title}</h1>
+      )}
+      {title && title.length >= 40 && title.length < 70 && (
+        <h1 className={styles["header-small"]}>{title}</h1>
+      )}
+      {title && title.length >= 70 && (
+        <h1 className={styles["header-smallest"]}>{`${title
+          .substring(0, 70)
+          .trim()}...`}</h1>
+      )}
       {tagline && <h2>{tagline}</h2>}
       <p className={styles["key-info"]}>
         <span>

@@ -10,9 +10,17 @@
   padding-left: 3rem;
   font-weight: 500;
   text-shadow: 1px 1px 2px black;
-  h1 {
+  .header {
     color: v.$secondary-color;
     font-size: 3rem;
+  }
+  .header-small {
+    color: v.$secondary-color;
+    font-size: 2rem;
+  }
+  .header-smallest {
+    color: v.$secondary-color;
+    font-size: 1.5rem;
   }
   h2 {
     font-size: 1.125rem;
@@ -28,15 +36,12 @@
   }
 
   p {
-    // display: flex;
-    // align-items: center;
     margin-top: 0.25rem;
   }
 
   .star-icon {
     color: v.$tertiary-color;
     transform: translateY(2px);
-    // margin-left: 4px;
     margin-right: 2px;
   }
 }
@@ -45,8 +50,14 @@
   .movie-info {
     width: 100%;
     padding: 0 1rem 0 1rem;
-    h1 {
+    .header {
       font-size: 2rem;
+    }
+    .header-small {
+      font-size: 1.5rem;
+    }
+    .header-smallest {
+      font-size: 1.1rem;
     }
     h2,
     h3 {

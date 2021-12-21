@@ -1,0 +1,31 @@
+@use "../../variables" as v;
+
+.favorite-button {
+  color: v.$text-color;
+  font-size: 1rem;
+  width: 12rem;
+  height: 3rem;
+  background-color: v.$secondary-color;
+  border-radius: 0.5rem;
+  border: 2px solid v.$secondary-color;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: v.$primary-color-dark;
+    color: v.$secondary-color;
+    outline: v.$secondary-color;
+  }
+}
+
+@media (max-width: v.$movie-page-small) {
+  .favorite-button {
+    transform: scale(75%, 75%);
+    transform-origin: top right;
+  }
+}
