@@ -1,25 +1,11 @@
 @use "../../variables" as v;
+@use "../../partials/defaultButton";
 
-.load-more-button {
-  color: v.$text-color;
+// Properties unique to this button override defaultButton values
+.button {
   font-size: 1.5rem;
   width: 16rem;
   height: 4rem;
-  background-color: v.$secondary-color;
   margin-bottom: 3.5rem;
-  border-radius: 0.5rem;
-  border: 2px solid v.$secondary-color;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  transition: all 0.25s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: v.$primary-color-dark;
-    color: v.$secondary-color;
-    outline: v.$secondary-color;
-  }
 }

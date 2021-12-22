@@ -23,7 +23,7 @@ const LoadButton = ({ displayedMovies, setDisplayedMovies, page, setPage }) => {
     <>
       <button
         type="button"
-        className={styles["load-more-button"]}
+        className={styles["button"]}
         onClick={() => {
           setPage(page + 1);
           setStartFetch(true);

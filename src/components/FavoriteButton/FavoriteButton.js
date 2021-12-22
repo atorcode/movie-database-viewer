@@ -13,7 +13,7 @@ const FavoriteButton = () => {
         <>
           {
             <button
-              className={styles["favorite-button"]}
+              className={styles["button"]}
               onClick={(e) => {
                 document.activeElement.blur();
                 handleStorage(
