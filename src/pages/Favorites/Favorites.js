@@ -9,7 +9,6 @@ const Favorites = () => {
     return JSON.parse(localStorage.getItem(id));
   });
 
-  console.log(favorites);
   return (
     <main className={styles["main-content"]}>
       <section className={styles["favorite-movies"]}>

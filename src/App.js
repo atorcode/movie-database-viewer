@@ -13,7 +13,7 @@ import FavoritesNotifications from "./components/FavoritesNotifications";
 import { useNotificationContext } from "./contexts/NotificationContext";
 
 function App() {
-  const { notifications, setSide } = useNotificationContext();
+  const { notifications } = useNotificationContext();
 
   return (
     <>

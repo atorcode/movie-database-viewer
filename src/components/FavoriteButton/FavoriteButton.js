@@ -7,8 +7,6 @@ const FavoriteButton = () => {
   const { notifications, setNotifications } = useNotificationContext();
   const { id, title, release, poster, score } = useSelectedMovieContext();
 
-  console.log(localStorage.getItem(id));
-
   return (
     <>
       {id && (

@@ -46,6 +46,10 @@
   }
 }
 
+.favorite-button-container {
+  margin-top: 1rem;
+}
+
 @media (max-width: v.$movie-page-small) {
   .movie-info {
     width: 100%;

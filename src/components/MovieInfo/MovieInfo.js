@@ -2,6 +2,7 @@ import styles from "./MovieInfo.module.scss";
 import { FaStar } from "react-icons/fa";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
 import { formatMinutes } from "../../helpers/helpers";
+import FavoriteButton from "../FavoriteButton";
 
 const MovieInfo = () => {
   const { title, release, score, tagline, overview, runtime, rating } =
@@ -41,6 +42,10 @@ const MovieInfo = () => {
 
       <h3>Overview</h3>
       <p>{overview}</p>
+
+      <div className={styles["favorite-button-container"]}>
+        <FavoriteButton />
+      </div>
     </div>
   );
 };
