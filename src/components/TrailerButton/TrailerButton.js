@@ -1,7 +1,7 @@
-import styles from "./PlayTrailerButton.module.scss";
+import styles from "./TrailerButton.module.scss";
 import { FaPlayCircle } from "react-icons/fa";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
-const PlayTrailerButton = () => {
+const TrailerButton = () => {
   const { setVideoIsOpen } = useSelectedMovieContext();
 
   return (
@@ -20,4 +20,4 @@ const PlayTrailerButton = () => {
   );
 };
 
-export default PlayTrailerButton;
+export default TrailerButton;

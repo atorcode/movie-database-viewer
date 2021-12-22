@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
 import { formatMinutes } from "../../helpers/helpers";
 import FavoriteButton from "../FavoriteButton";
-import PlayTrailerButton from "../PlayTrailerButton";
+import TrailerButton from "../TrailerButton";
 
 const MovieInfo = () => {
   const { title, release, score, tagline, overview, runtime, rating, trailer } =
@@ -44,7 +44,7 @@ const MovieInfo = () => {
 
         {trailer && (
           <div>
-            <PlayTrailerButton />
+            <TrailerButton />
           </div>
         )}
       </div>
