@@ -9,10 +9,11 @@ const SelectedMovieProvider = ({ children }) => {
   const { movieId } = useParams();
 
   const { data } = useSWR(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits,release_dates`,
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits,release_dates,videos`,
     fetcher
   );
 
+  // Define variables to pass on
   let id,
     title,
     image,
@@ -31,7 +32,10 @@ const SelectedMovieProvider = ({ children }) => {
     production,
     directedBy,
     writtenBy,
-    genreInfo;
+    genreInfo,
+    trailer;
+
+  // Set variables here. Many are simply set by destructuring, others require a little more logic.
   if (data) {
     ({
       id,
@@ -75,6 +79,24 @@ const SelectedMovieProvider = ({ children }) => {
     } else {
       rating = "NR";
     }
+
+    // Find official trailer if it exists. If not, look for a trailer with a name containing the words "official" and "trailer", e.g., "official teaser trailer". If still no matches, find any trailer.
+    trailer = data.videos.results.find((result) => {
+      return result.name.toLowerCase() === "official trailer";
+    });
+    if (!trailer) {
+      trailer = data.videos.results.find((result) => {
+        let regex = /official.*trailer/i;
+        return regex.test(result.name);
+      });
+    }
+    if (!trailer) {
+      trailer = data.videos.results.find((result) => {
+        return result.type.toLowerCase() === "trailer";
+      });
+    }
+
+    console.log(trailer);
   }
 
   return (
@@ -99,6 +121,7 @@ const SelectedMovieProvider = ({ children }) => {
         directedBy,
         writtenBy,
         genreInfo,
+        trailer,
       }}
     >
       {children}

@@ -3,18 +3,14 @@ import { FaStar } from "react-icons/fa";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
 import { formatMinutes } from "../../helpers/helpers";
 import FavoriteButton from "../FavoriteButton";
+import PlayTrailerButton from "../PlayTrailerButton";
 
 const MovieInfo = () => {
-  const { title, release, score, tagline, overview, runtime, rating } =
+  const { title, release, score, tagline, overview, runtime, rating, trailer } =
     useSelectedMovieContext();
 
   return (
     <div className={styles["movie-info"]}>
-      {/* {title && title.length < 40 ? (
-        <h1 className={styles["header"]}>{title}</h1>
-      ) : (
-        <h1 className={styles["header-small"]}>{title}</h1>
-      )} */}
       {title && title.length < 40 && (
         <h1 className={styles["header"]}>{title}</h1>
       )}
@@ -46,6 +42,11 @@ const MovieInfo = () => {
       <div className={styles["favorite-button-container"]}>
         <FavoriteButton />
       </div>
+      {trailer && (
+        <div>
+          <PlayTrailerButton />
+        </div>
+      )}
     </div>
   );
 };
