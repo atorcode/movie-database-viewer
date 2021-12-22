@@ -1,0 +1,10 @@
+.video {
+  z-index: 9999;
+  position: fixed;
+  // border: none;
+  width: 1200px;
+  height: 600px;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

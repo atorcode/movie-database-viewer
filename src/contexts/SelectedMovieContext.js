@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import fetcher from "../helpers/fetcher";
@@ -6,12 +6,15 @@ import fetcher from "../helpers/fetcher";
 const SelectedMovieContext = React.createContext();
 
 const SelectedMovieProvider = ({ children }) => {
+  const [videoIsOpen, setVideoIsOpen] = useState(false);
   const { movieId } = useParams();
 
   const { data } = useSWR(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits,release_dates,videos`,
     fetcher
   );
+
+  console.log(videoIsOpen);
 
   // Define variables to pass on
   let id,
@@ -95,8 +98,6 @@ const SelectedMovieProvider = ({ children }) => {
         return result.type.toLowerCase() === "trailer";
       });
     }
-
-    console.log(trailer);
   }
 
   return (
@@ -122,6 +123,8 @@ const SelectedMovieProvider = ({ children }) => {
         writtenBy,
         genreInfo,
         trailer,
+        videoIsOpen,
+        setVideoIsOpen,
       }}
     >
       {children}
