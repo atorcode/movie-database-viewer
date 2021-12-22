@@ -1,7 +1,6 @@
 @use "../variables" as v;
 
 // All buttons that make use of this style should be assigned a class name of "button"
-
 .button {
   color: v.$text-color;
   font-size: 0.85rem;
@@ -22,12 +21,5 @@
     background-color: v.$primary-color-dark;
     color: v.$secondary-color;
     outline: v.$secondary-color;
-  }
-}
-
-@media (max-width: v.$movie-page-small) {
-  .button {
-    transform: scale(75%, 75%);
-    transform-origin: top right;
   }
 }

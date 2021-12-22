@@ -1,9 +1,6 @@
 @use "../../variables" as v;
 @use "../../partials/defaultButton";
 
-@media (max-width: v.$movie-page-small) {
-  .button {
-    transform: scale(75%, 75%);
-    transform-origin: top right;
-  }
+.button {
+  min-width: 10rem;
 }

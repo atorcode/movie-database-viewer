@@ -10,18 +10,22 @@
   padding-left: 3rem;
   font-weight: 500;
   text-shadow: 1px 1px 2px black;
+
   .header {
     color: v.$secondary-color;
     font-size: 2.5rem;
   }
+
   .header-small {
     color: v.$secondary-color;
     font-size: 2rem;
   }
+
   .header-smallest {
     color: v.$secondary-color;
     font-size: 1.5rem;
   }
+
   h2 {
     font-size: 1.125rem;
     color: #ffffff;
@@ -46,8 +50,12 @@
   }
 }
 
-.favorite-button-container {
+.buttons-container {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 @media (max-width: v.$movie-page-small) {
@@ -71,5 +79,10 @@
     p {
       font-size: 0.75rem;
     }
+  }
+
+  .buttons-container {
+    transform: scale(75%, 75%);
+    transform-origin: top left;
   }
 }

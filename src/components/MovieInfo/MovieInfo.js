@@ -39,14 +39,15 @@ const MovieInfo = () => {
       <h3>Overview</h3>
       <p>{overview}</p>
 
-      <div className={styles["favorite-button-container"]}>
+      <div className={styles["buttons-container"]}>
         <FavoriteButton />
+
+        {trailer && (
+          <div>
+            <PlayTrailerButton />
+          </div>
+        )}
       </div>
-      {trailer && (
-        <div>
-          <PlayTrailerButton />
-        </div>
-      )}
     </div>
   );
 };
