@@ -14,7 +14,7 @@ const TrailerModal = () => {
     >
       {trailer.key && (
         <iframe
-          src={`https://www.youtube.com/embed/${trailer.key}`}
+          src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1`}
           className={styles["video"]}
         ></iframe>
         // <video
