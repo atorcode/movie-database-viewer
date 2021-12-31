@@ -58,6 +58,25 @@
   gap: 0.5rem;
 }
 
+.text-shortened {
+  // visibility: hidden;
+  // width: auto;
+  // height: auto;
+  // background-color: black;
+  // text-align: center;
+  // position: absolute;
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  // background-color: yellow;
+}
+
+.text-shortened:hover + .tooltip {
+  display: block;
+}
+
 @media (max-width: v.$movie-page-small) {
   .movie-info {
     width: 100%;
