@@ -18,12 +18,12 @@ const MovieInfo = () => {
         <h1 className={styles["header-small"]}>{title}</h1>
       )}
       {title && title.length >= 70 && (
-        <>
+        <div className={styles["tooltip-and-text"]}>
           <h1
             className={`${styles["header-smallest"]} ${styles["text-shortened"]}`}
           >{`${title.substring(0, 70).trim()}...`}</h1>
           <div className={styles["tooltip"]}>{title}</div>
-        </>
+        </div>
       )}
       {tagline && <h2>{tagline}</h2>}
       <p className={styles["key-info"]}>
@@ -43,12 +43,12 @@ const MovieInfo = () => {
 
       {overview && overview.length <= 500 && <p>{overview}</p>}
       {overview && (
-        <>
+        <div className={styles["tooltip-and-text"]}>
           <p className={styles["text-shortened"]}>
             {overview.length > 500 && `${overview.substring(0, 500).trim()}...`}
           </p>
           <div className={styles["tooltip"]}>{overview}</div>
-        </>
+        </div>
       )}
 
       <div className={styles["buttons-container"]}>

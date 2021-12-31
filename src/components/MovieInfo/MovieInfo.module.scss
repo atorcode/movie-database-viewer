@@ -67,10 +67,29 @@
   // position: absolute;
 }
 
+.tooltip-and-text {
+  position: relative;
+}
+
 .tooltip {
+  z-index: 9;
   position: absolute;
+  padding: 0.5rem;
+  top: 105%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   display: none;
-  // background-color: yellow;
+  background-color: v.$primary-color-dark;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 99.5%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent v.$primary-color-dark transparent;
+  }
 }
 
 .text-shortened:hover + .tooltip {
