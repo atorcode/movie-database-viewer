@@ -1,9 +1,17 @@
 @use "../../variables" as v;
 
-.header {
+.header-center {
   color: v.$secondary-color;
   font-size: 1.8rem;
   display: flex;
   justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.header-left {
+  color: v.$secondary-color;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: flex-start;
   margin-bottom: 2.5rem;
 }

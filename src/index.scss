@@ -27,6 +27,7 @@ body {
 ::selection {
   background-color: v.$tertiary-color;
   color: v.$primary-color;
+  text-shadow: none;
 }
 
 // scrollbar

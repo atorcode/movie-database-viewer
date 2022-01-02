@@ -1,6 +1,8 @@
+import { useState, useEffect, useRef } from "react";
 import styles from "./Favorites.module.scss";
 import MovieGroupingHeader from "../../components/MovieGroupingHeader";
 import MovieCards from "../../components/MovieCards";
+import ClearButton from "../../components/ClearButton";
 
 const Favorites = () => {
   const idsOfFavorites = Object.keys(localStorage);
@@ -17,7 +19,12 @@ const Favorites = () => {
             You haven't added any favorite movies yet
           </h3>
         )}
-        <MovieGroupingHeader header={"Favorite Movies"} />
+        <div className={styles["header-and-button"]}>
+          <MovieGroupingHeader header={"Favorite Movies"} position={"left"} />
+          <div>
+            <ClearButton />
+          </div>
+        </div>
         <MovieCards
           moviesToDisplay={favorites}
           styleInfo={{
