@@ -16,6 +16,7 @@ const TrailerModal = () => {
     return () => {
       document.removeEventListener("keydown", closeModal);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -28,6 +29,7 @@ const TrailerModal = () => {
       {trailer.key && (
         <iframe
           src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1`}
+          title="Movie Trailer"
           className={styles["video"]}
         ></iframe>
         // <video

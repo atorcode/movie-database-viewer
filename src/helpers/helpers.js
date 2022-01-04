@@ -62,7 +62,12 @@ const singularOrPlural = (singularForm, arr) => {
 };
 
 // local storage for favorited movies
-const handleStorage = (props, notifications, setNotifications) => {
+const handleStorage = (
+  props,
+  notifications,
+  setNotifications,
+  setFavoriteMovies
+) => {
   const { id, title } = props;
   const uuid = uuidv4();
   if (!localStorage.getItem(id)) {
@@ -72,6 +77,12 @@ const handleStorage = (props, notifications, setNotifications) => {
     localStorage.removeItem(id);
     setNotifications([...notifications, { title, action: "remove", id: uuid }]);
   }
+  // set stateful favoriteMovies array to match whatever is in localStorage
+  setFavoriteMovies(
+    Object.keys(localStorage).map((id) => {
+      return JSON.parse(localStorage.getItem(id));
+    })
+  );
 };
 
 export { formatMinutes, formatDate, singularOrPlural, handleStorage };

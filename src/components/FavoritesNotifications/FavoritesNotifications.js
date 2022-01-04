@@ -3,7 +3,7 @@ import FavoritesNotification from "../FavoritesNotification";
 import { useNotificationContext } from "../../contexts/NotificationContext";
 
 const FavoritesNotifications = () => {
-  const { notifications, position } = useNotificationContext();
+  const { notifications } = useNotificationContext();
   return (
     <>
       <aside className={styles["notifications"]}>

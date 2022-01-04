@@ -1,6 +1,7 @@
 import styles from "./ClearButton.module.scss";
-
+import { useFavoritesContext } from "../../contexts/FavoritesContext";
 const ClearButton = () => {
+  const { setFavoriteMovies } = useFavoritesContext();
   return (
     <button
       className={styles["button"]}
@@ -9,6 +10,7 @@ const ClearButton = () => {
       }}
       onClick={() => {
         localStorage.clear();
+        setFavoriteMovies([]);
       }}
     >
       Clear All

@@ -14,8 +14,6 @@ const SelectedMovieProvider = ({ children }) => {
     fetcher
   );
 
-  console.log(videoIsOpen);
-
   // Define variables to pass on
   let id,
     title,

@@ -2,10 +2,12 @@ import styles from "./FavoriteButton.module.scss";
 import { handleStorage } from "../../helpers/helpers";
 import { useNotificationContext } from "../../contexts/NotificationContext";
 import { useSelectedMovieContext } from "../../contexts/SelectedMovieContext";
+import { useFavoritesContext } from "../../contexts/FavoritesContext";
 
 const FavoriteButton = () => {
   const { notifications, setNotifications } = useNotificationContext();
   const { id, title, release, poster, score } = useSelectedMovieContext();
+  const { setFavoriteMovies } = useFavoritesContext();
 
   return (
     <>
@@ -19,7 +21,8 @@ const FavoriteButton = () => {
                 handleStorage(
                   { id, title, release, poster, score },
                   notifications,
-                  setNotifications
+                  setNotifications,
+                  setFavoriteMovies
                 );
               }}
             >

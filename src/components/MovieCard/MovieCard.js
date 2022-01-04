@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import defaultImage from "../../images/no-image-found.png";
 import { useNotificationContext } from "../../contexts/NotificationContext";
+import { useFavoritesContext } from "../../contexts/FavoritesContext";
 import { handleStorage } from "../../helpers/helpers";
 
 const MovieCard = (props) => {
   const { notifications, setNotifications } = useNotificationContext();
+  const { setFavoriteMovies } = useFavoritesContext();
 
   const pathEl = useRef(null);
   const { id, title, release, poster, score } = props;
@@ -56,7 +58,8 @@ const MovieCard = (props) => {
               handleStorage(
                 { id, title, release, poster, score },
                 notifications,
-                setNotifications
+                setNotifications,
+                setFavoriteMovies
               );
               toggleFill(e.target);
             }}
