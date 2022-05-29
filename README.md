@@ -14,6 +14,8 @@ Features include:
 
 - Detailed movie descriptions including overviews, taglines, MPAA ratings, release dates, runtimes, budget and revenue, spoken languages, production companies, cast and crew information, and user scores.
 
+- Embedded movie trailers
+
 - Ability to search for hundreds of thousands of movies
 
 - Up-to-date view of trending movies
