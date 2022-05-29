@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <img src="./src/images/application-capture.gif" alt="Application Demo GIF" width="800" height="auto"/>
 
+## Live Demo
+
+[https://www.mdbv.net](https://www.mdbv.net)
+
 ## Overview
 
 Movie Database Viewer (MDbV) is a React Single-page Application for browsing movies.
