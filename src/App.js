@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { SelectedMovieProvider } from "./contexts/SelectedMovieContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import FavoritesNotifications from "./components/FavoritesNotifications";
 
 import Home from "./pages/Home/";
 import SelectedMovie from "./pages/SelectedMovie";
 import Actor from "./pages/Actor";
 import Error from "./pages/Error";
 import Favorites from "./pages/Favorites";
-import FavoritesNotifications from "./components/FavoritesNotifications";
+
 import { useNotificationContext } from "./contexts/NotificationContext";
+import { SelectedMovieProvider } from "./contexts/SelectedMovieContext";
 
 function App() {
   const { notifications } = useNotificationContext();
@@ -18,6 +20,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
